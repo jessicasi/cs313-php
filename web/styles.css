@@ -4,5 +4,11 @@ body {
 
 h1 {
     color: white;
-    font: cursive;
+    text-align: center;
+    font-size: 3.5rem;
+    border: 2px dashed white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
