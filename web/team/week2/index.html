@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Team Week 2</title>
     <meta name="description" content="Week 2 Team Assignment">
     <meta name="author" content="Jessica Ingebrigtsen">
     <link rel="stylesheet" href="styles.css">
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
 </head>
 
 
 <body>
-    <h1>testing</h1>
+    <div class="colors" id="custom">
+        <p>Div 1 - Vanilla JS</p>
+    </div>
+    <label>What color do you want to Div 1 to be?</label>
+    <input id="colorinput" type="text">
+    <button id="colorbtn">Change Color</button>
+    <div class="colors" id="jqCustom">
+        <p>Div 2 - Jquery</p>
+    </div>
+    <label>What color do you want to Div 2 to be?</label>
+    <input id="jqColor" type="text">
+    <button id="jqButton">Change Color</button>
+    <div class="colors" id="fade">
+        <p>Div 3</p>
+    </div>
+    <button id="fadeButton">Fade Out</button>
+    <button id="clickbtn">Click Me</button>
+
     <script src="scripts.js"></script>
+    <script src="jquery.js"></script>
+
+
 </body>
 
 </html>
