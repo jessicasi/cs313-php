@@ -1,5 +1,6 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] .'/cs313-php/web/common/header.php';
-//phpinfo()?>
+<?php include 'common/header.php';
+?>
 
 <h1>Assignments</h1>
-<?php include $_SERVER['DOCUMENT_ROOT'] .'/cs313-php/web/common/footer.php';?>
+
+<?php include 'common/footer.php';?>
