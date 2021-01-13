@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] .'/cs313-php/web/common/header.php';
+<?php include 'common/header.php';
 //phpinfo()?>
 
 <h1>Testing</h1>
