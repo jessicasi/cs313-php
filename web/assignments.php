@@ -2,5 +2,6 @@
 ?>
 
 <h1>Assignments</h1>
+<p>Coming Soon</p>
 
 <?php include 'common/footer.php';?>
