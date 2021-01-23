@@ -1,11 +1,11 @@
-<?php include '../common/header.php'?>
+<?php include 'common/header.php'?>
  <?php session_start();?>
 <div class="container">
 <h1>Books for Sale</h1>
   <!---The Eye of the World-->
   <section class="card h-100">
     <h4>The Eye of the World</h4>
-    <img class="covers" src="../images/wot1.jpg" alt="The Eye of the World">
+    <img class="covers" src="images/wot1.jpg" alt="The Eye of the World">
     <hr>
     <p>Author:</p>
     <p>Robert Jordan</p>
@@ -127,4 +127,4 @@
 </div><!---end container-->
 
 
-<?php include '../common/footer.php'; ?>
+<?php include 'common/footer.php'; ?>
