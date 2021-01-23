@@ -2,6 +2,6 @@
 ?>
 
 <h1>Assignments</h1>
-<p>Coming Soon</p>
+<p><a href='week3'>W3 Shopping Cart Assignment</a></p>
 
 <?php include 'common/footer.php';?>
