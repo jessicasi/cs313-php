@@ -25,7 +25,8 @@ switch ($action) {
 
             $_SESSION['cartItems'][] = $itemName;
         }
-
+        echo "test";
+        exit;
         include '/cs313-php/web/week3/';
         break;
 
