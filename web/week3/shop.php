@@ -3,7 +3,7 @@
 <div class="container">
 <h1>Books for Sale</h1>
   <!---The Eye of the World-->
-  <form class="card h-100" method = "post" action="test.php">
+  <form class="card h-100" method = "post" action="cart">
     <h4>The Eye of the World</h4>
     <img class="covers" src="images/wot1.jpg" alt="The Eye of the World">
     <hr>
