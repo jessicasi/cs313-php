@@ -25,7 +25,7 @@ switch ($action) {
             $_SESSION['cartItems'][] = $itemName;
         }
 
-        header('Location: /cs313-php/web/week3');
+        header('Location: /web/week3');
         break;
 
     case 'showCart':
@@ -37,7 +37,7 @@ switch ($action) {
         }
 
 
-        header('Location: /cs313-php/web/week3/showCart.php');
+        header('Location: /web/week3/showCart.php');
         break;
 
     case 'delete':
@@ -57,7 +57,7 @@ switch ($action) {
         }
 
 
-        header('Location: /cs313-php/web/week3/showCart.php');
+        header('Location: /web/week3/showCart.php');
         break;
 
         break;
@@ -65,10 +65,10 @@ switch ($action) {
     case 'deliverCheckoutView':
         if (empty($_SESSION['cartItems'])) {
             $_SESSION['message'] = '<p class="errorMessage">Add something to your cart before you can checkout</p>';
-            header('Location: /cs313-php/web/week3/showCart.php');
+            header('Location: /web/week3/showCart.php');
             exit;
         }
-        header('Location: /cs313-php/web/week3/checkout.php');
+        header('Location: /web/week3/checkout.php');
         break;
 
     case 'checkout':
@@ -86,13 +86,13 @@ switch ($action) {
 
         if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip)) {
             $_SESSION['message'] = "<p class='errorMessage'>Please provide information for all empty form fields.</p>";
-            header('Location: /cs313-php/web/week3/checkout.php');
+            header('Location: /web/week3/checkout.php');
             exit;
         }
 
         $_SESSION['orderInfo'] = buildOrderInfo();
 
-        header('Location: /cs313-php/web/week3/confirm.php');
+        header('Location: /web/week3/confirm.php');
 
         break;
 
