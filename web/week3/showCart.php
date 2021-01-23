@@ -14,8 +14,8 @@ session_start(); ?>
     };
     ?>
     <p class="checkoutButtons">
-        <a href="/cs313-php/web/week3/" class="btn btn-primary" id="continue">Continue Shopping</a>
-        <a href="/cs313-php/web/week3/cart?action=deliverCheckoutView" class="btn btn-primary" id="chkout">Check Out</a>
+        <a href="week3" class="btn btn-primary" id="continue">Continue Shopping</a>
+        <a href="cart?action=deliverCheckoutView" class="btn btn-primary" id="chkout">Check Out</a>
     </p>
 </div>
 
