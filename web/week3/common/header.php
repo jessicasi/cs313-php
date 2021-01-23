@@ -19,6 +19,6 @@
     
         <nav class="nav nav-pills flex-column flex-sm-row">
             <a class="flex-sm-fill text-sm-center nav-link" href="index.php">Home</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="/cs313-php/web/week3/cart?action=showCart">Shopping Cart</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="cart?action=showCart">Shopping Cart</a>
         </nav>
         <main>
