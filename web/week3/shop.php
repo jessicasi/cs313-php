@@ -12,7 +12,7 @@
     <hr>
     <p>Pages:</p>
     <p>670</p>
-    <a href="week3/cart/?action=add&itemName=The Eye of the World" class="btn btn-primary">Add to Cart</a>
+    <a href="week3/cart?action=add&itemName=The Eye of the World" class="btn btn-primary">Add to Cart</a>
   </section> <!---The Eye of the World-->
     <!---Harry Potter-->
     <section class="card h-100">
