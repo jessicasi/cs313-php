@@ -37,7 +37,7 @@ switch ($action) {
         }
 
 
-        header('Location: /web/week3/showCart.php');
+        header('Location: ../showCart.php');
         break;
 
     case 'delete':
@@ -57,7 +57,7 @@ switch ($action) {
         }
 
 
-        header('Location: /web/week3/showCart.php');
+        header('Location: ../showCart.php');
         break;
 
         break;
@@ -68,7 +68,7 @@ switch ($action) {
             header('Location: /web/week3/showCart.php');
             exit;
         }
-        header('Location: /web/week3/checkout.php');
+        header('Location: ../checkout.php');
         break;
 
     case 'checkout':
@@ -86,18 +86,18 @@ switch ($action) {
 
         if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip)) {
             $_SESSION['message'] = "<p class='errorMessage'>Please provide information for all empty form fields.</p>";
-            header('Location: /web/week3/checkout.php');
+            header('Location: ../checkout.php');
             exit;
         }
 
         $_SESSION['orderInfo'] = buildOrderInfo();
 
-        header('Location: /web/week3/confirm.php');
+        header('Location: ../confirm.php');
 
         break;
 
 
     default:
-        header('Location: /cs313-php/web/week3/shop.php');
+        header('Location: ../shop.php');
         break;
 }

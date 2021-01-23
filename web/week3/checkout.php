@@ -9,7 +9,7 @@
     };
     ?>
 
-    <form action="test.php" method="post">
+    <form action="cart" method="post">
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
@@ -105,7 +105,7 @@
             </div>
         </div>
         <input type="hidden" name="action" value="checkout">
-        <a href="/cs313-php/web/week3/cart?action=showCart" class="btn btn-primary col-sm-3" id="return">Return To Cart</a>
+        <a href="cart?action=showCart" class="btn btn-primary col-sm-3" id="return">Return To Cart</a>
         <input name="submit" type="submit" value="Submit Order" class="btn btn-primary col-sm-3" id="order" required>
        
     </form>
