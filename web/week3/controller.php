@@ -16,8 +16,7 @@ switch ($action) {
 
     case 'add':
         //store incoming item
-        echo "test";
-        exit;
+    
         $itemName = filter_input(INPUT_GET, 'itemName', FILTER_SANITIZE_STRING);
 
         $itemName = htmlspecialchars($itemName);
@@ -27,7 +26,7 @@ switch ($action) {
             $_SESSION['cartItems'][] = $itemName;
         }
 
-        include './week3/index.php';
+        include 'index.php';
         break;
 
     case 'showCart':
