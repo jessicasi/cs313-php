@@ -25,7 +25,7 @@ switch ($action) {
             $_SESSION['cartItems'][] = $itemName;
         }
 
-        header('Location: /web/week3');
+        include '../shop.php';
         break;
 
     case 'showCart':
