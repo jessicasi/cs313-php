@@ -108,7 +108,7 @@
     <hr>
     <p>Pages:</p>
     <p>308</p>
-    <a href="/cs313-php/web/week3/cart?action=add&itemName=We are Legion" class="btn btn-primary">Add to Cart</a>
+    <a href="/web/week3/cart?action=add&itemName=We are Legion" class="btn btn-primary">Add to Cart</a>
   </section> <!---We are Legion-->
    <!---Will Save the Galaxy for Food-->
    <section class="card h-100">
@@ -120,7 +120,7 @@
     <hr>
     <p>Pages:</p>
     <p>286</p>
-    <a href="/cs313-php/web/week3/cart?action=add&itemName=Will Save the Galaxy for Food" class="btn btn-primary">Add to Cart</a>
+    <a href="/web/week3/cart?action=add&itemName=Will Save the Galaxy for Food" class="btn btn-primary">Add to Cart</a>
   </section> <!---Will Save the Galaxy for Food-->
 
 
