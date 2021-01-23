@@ -120,7 +120,7 @@
     <hr>
     <p>Pages:</p>
     <p>286</p>
-    <a href="/web/week3/cart?action=add&itemName=Will Save the Galaxy for Food" class="btn btn-primary">Add to Cart</a>
+    <a href="/cart?action=add&itemName=Will Save the Galaxy for Food" class="btn btn-primary">Add to Cart</a>
   </section> <!---Will Save the Galaxy for Food-->
 
 
