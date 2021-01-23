@@ -26,7 +26,7 @@ switch ($action) {
             $_SESSION['cartItems'][] = $itemName;
         }
 
-        include 'index.php';
+        include '/cs313-php/web/week3/';
         break;
 
     case 'showCart':
