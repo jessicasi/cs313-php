@@ -27,7 +27,8 @@ switch ($action) {
         }
         echo "test";
         exit;
-        include '/cs313-php/web/week3/';
+
+        include '../shop.php';
         break;
 
     case 'showCart':
