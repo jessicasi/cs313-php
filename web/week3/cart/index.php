@@ -16,6 +16,8 @@ switch ($action) {
 
     case 'add':
         //store incoming item
+        echo "test";
+        exit;
         $itemName = filter_input(INPUT_GET, 'itemName', FILTER_SANITIZE_STRING);
 
         $itemName = htmlspecialchars($itemName);
