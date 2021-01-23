@@ -9,7 +9,7 @@
     };
     ?>
 
-    <form action="/cs313-php/web/week3/cart/index.php" method="post">
+    <form action="test.php" method="post">
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
