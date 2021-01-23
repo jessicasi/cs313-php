@@ -25,10 +25,7 @@ switch ($action) {
 
             $_SESSION['cartItems'][] = $itemName;
         }
-
-        echo "test";
-        exit;
-        include 'index.php';
+        include '../index.php';
         break;
 
     case 'showCart':
