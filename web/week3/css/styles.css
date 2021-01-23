@@ -1,0 +1,263 @@
+body {
+    background-color: #E4E7E8;
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.card {
+    background-color:#696763;
+    width: 18rem;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.container{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.covers{
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#tall-img{
+    height: 50%;
+}
+
+.btn-primary {
+    background-color: #E4E7E8;
+    color: black;
+}
+
+
+hr{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+nav {
+    background-color: black;
+    opacity: 60%;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-bottom: 15px;
+   
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    color: aqua;
+    font-size: 1.3rem;
+}
+
+p {
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    opacity: 60%;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    width: 100%;
+}
+
+
+.cart-display{
+    width: 100%;
+    margin: auto;
+}
+
+.col1 {
+    text-align: left;
+}
+
+.col2{
+    text-align: right;
+}
+
+.cart-contain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}
+
+.cart-contain>h1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#continue, #chkout, #order, #return {
+    background-color: #696763;
+    color: white;
+}
+
+.errorMessage{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+#return a{
+    text-align: center;
+}
+
+.confirmInfo{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.addressInfo {
+    margin:0;
+}
+
+.message{
+    color: #696763;
+    font-weight: bold;
+    text-align: center;
+}
+
+.order-display{
+    text-align: center;
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px){
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 10px;
+    }
+
+    .container h1, .message {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .card {
+        width: 20rem;
+    }
+
+    .cart-display, .orderContainer, h4{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .cart-display li{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .col1{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        text-align: center;
+        
+    }
+
+   .col2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        text-align: center;
+        
+    }
+
+    .checkoutButtons, form {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    form{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+
+    .container h1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .cart-display, .checkoutButtons, hr, form,.orderContainer, h4{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    form{
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+}
+
+@media only screen and (min-width: 2020px){
+
+    .container h1 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cart-display, .checkoutButtons, hr, form,.orderContainer, h4{
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+
+    .card {
+        width: 23rem;
+    }
+
+    #tall-img{
+        height: 55%;
+    }
+
+    form{
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+}
