@@ -3,7 +3,7 @@
 
 session_start();
 
-require_once '../functions.php';
+require_once '/functions.php';
 
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
 if ($action == NULL) {
@@ -17,7 +17,7 @@ switch ($action) {
     case 'add':
         //store incoming item
     
-        $itemName = filter_input(INPUT_GET, 'itemName', FILTER_SANITIZE_STRING);
+        $itemName = filter_input(INPUT_POST, 'itemName', FILTER_SANITIZE_STRING);
 
         $itemName = htmlspecialchars($itemName);
 

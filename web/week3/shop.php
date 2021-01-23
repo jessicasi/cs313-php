@@ -3,7 +3,7 @@
 <div class="container">
 <h1>Books for Sale</h1>
   <!---The Eye of the World-->
-  <section class="card h-100">
+  <form class="card h-100" method = "post" action="test.php">
     <h4>The Eye of the World</h4>
     <img class="covers" src="images/wot1.jpg" alt="The Eye of the World">
     <hr>
@@ -12,8 +12,11 @@
     <hr>
     <p>Pages:</p>
     <p>670</p>
-    <a href="test.php?action=add&itemName=The Eye of the World" class="btn btn-primary">Add to Cart</a>
-  </section> <!---The Eye of the World-->
+    <input type="hidden" name="itemName" value="The Eye of the World">
+    <input type="hidden" name="action" value="add">
+    <input class="btn btn-primary" type="submit" name="submit" value ="Add to Cart">
+    <!--<a href="test.php?action=add&itemName=The Eye of the World" class="btn btn-primary">Add to Cart</a>-->
+</form> <!---The Eye of the World-->
     <!---Harry Potter-->
     <section class="card h-100">
     <h4>Harry Potter</h4>
