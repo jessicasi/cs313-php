@@ -104,9 +104,10 @@
                     }?>'>
             </div>
         </div>
-        <input type="hidden" name="action" value="checkout">
         <a href="cart?action=showCart" class="btn btn-primary col-sm-3" id="return">Return To Cart</a>
-        <input name="submit" type="submit" value="Submit Order" class="btn btn-primary col-sm-3" id="order" required>
+        <a href="cart?action=checkout" class="btn btn-primary col-sm-3" id="return">Submit Order</a>
+        
+        
        
     </form>
 </div>
