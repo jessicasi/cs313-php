@@ -84,11 +84,7 @@ switch ($action) {
         $_SESSION['state'] = htmlspecialchars($state);
         $_SESSION['zip'] = htmlspecialchars($zip);
 
-        if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip)) {
-            $_SESSION['message'] = "<p class='errorMessage'>Please provide information for all empty form fields.</p>";
-            header('Location: ../checkout.php');
-            exit;
-        }
+        
 
         $_SESSION['orderInfo'] = buildOrderInfo();
 
