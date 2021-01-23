@@ -1,5 +1,5 @@
 <?php include 'common/header.php';?>
-
+ <?php session_start()?>;
 <div class="container">
 <h1>Books for Sale</h1>
   <!---The Eye of the World-->
