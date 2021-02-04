@@ -14,11 +14,11 @@ require_once 'library/functions.php';
 
 
 //Get the list of species
-$species = getSpecies();
+$classifications = getClassifications();
 
 // Build the nav list
 
-$navList = getNavList($species);
+$navList = getNavList($classifications);
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {

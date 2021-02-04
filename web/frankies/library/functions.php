@@ -1,14 +1,14 @@
 <?php
 
 //Build the navigation bar
-function getNavList($species)
+function getNavList($classifications)
 {
    $navList = '<ul>';
    $navList .= "<li><a href='../frankies' title='Frankie's Farm Home Page'>Home</a></li>";
-   foreach ($species as $type) {
+   foreach ($classifications as $classification) {
       $navList .= "<li><a href='../frankies/animals?action=species&speciesType="
-         . urlencode($type['speciesType']) .
-         "' title='View our $type[speciesType]'>$type[speciesType]</a></li>";
+         . urlencode($classification['classification_name']) .
+         "' title='View our $classification[classification_name]'>$classification[classification_name]</a></li>";
    }
    $navList .= '</ul>';
    return $navList;
