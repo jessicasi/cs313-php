@@ -24,8 +24,5 @@ function buildAnimalDisplay($animals){
       $adv .= "<p>$animal[animal_name]</p>";
       $adv .= "</a></li>";
    }
-
-   var_dump($adv);
-   exit;
-
+   return $adv;
 }

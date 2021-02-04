@@ -40,6 +40,8 @@ switch ($action) {
         }else {
             $animalDisplay = buildAnimalDisplay($animals);
         }
+
+        include '../view/animals.php';
         break;
     default:
         include 'view/home.php';
