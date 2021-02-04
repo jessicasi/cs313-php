@@ -1,5 +1,6 @@
 <?php
 
+echo "test";
 //This is the main controller
 
 //Create or access a Session
@@ -20,5 +21,5 @@ $species = getSpecies();
 
 $navList = getNavList($species);
 
-echo "test";
+
 ?>
