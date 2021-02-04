@@ -3,7 +3,7 @@
     //Get list of animals by type
     function getAnimalsByType($classification_type){
         $db = frankiesFarmConnect();
-        $sql = "SELECT a.id, a.animal_type, a.animal_subtype, a.animal_age, a.animal_notes, a.classification_id
+        $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_age, a.animal_notes, a.classification_id
         FROM animals AS a
         INNER JOIN
         classification AS c
