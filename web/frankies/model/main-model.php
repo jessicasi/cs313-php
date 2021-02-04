@@ -6,7 +6,7 @@ function getClassifications(){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT classification_name, classification_id FROM classification ORDER BY classification_name ASC';
+    $sql = 'SELECT classification_type, classification_id FROM classification ORDER BY classification_type ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement
