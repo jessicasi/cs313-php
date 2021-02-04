@@ -10,6 +10,8 @@ session_start();
 require_once '../library/connections.php';
 //get the main model for use as needed
 require_once '../model/main-model.php';
+//get the main model for use as needed
+require_once '../model/animal-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
