@@ -6,7 +6,7 @@ function getSpecies(){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT speciesType, id FROM species ORDER BY speciesType ASC';
+    $sql = 'SELECT speciesType, speciesId FROM species ORDER BY speciesType ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement

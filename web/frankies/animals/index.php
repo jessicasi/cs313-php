@@ -29,7 +29,7 @@ if ($action == NULL) {
 switch ($action) {
 
     case 'species':
-        $animaltype = filter_input(INPUT_GET,'speciesType', FILTER_SANITIZE_STRING);
+        $speciesType = filter_input(INPUT_GET,'speciesType', FILTER_SANITIZE_STRING);
         $pageTitle = $speciesType;
         $animals = getAnimalsByType($speciesType);
         break;
