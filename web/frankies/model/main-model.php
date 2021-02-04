@@ -6,7 +6,7 @@ function getSpecies(){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT animaltype, id FROM public.species ORDER BY animaltype ASC';
+    $sql = 'SELECT animaltype, id FROM species ORDER BY animaltype ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement
@@ -16,9 +16,11 @@ function getSpecies(){
     //The next line closes the interation with the database
     $stmt->closeCursor();
     //The next line sends the array of data back to where the function ws called (this should be the controller)
+
+    var_dump($species);
+    exit;
     return $species;
 
 }
 
-//added: , classficationID in select statement
 
