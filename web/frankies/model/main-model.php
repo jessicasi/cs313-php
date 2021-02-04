@@ -17,8 +17,6 @@ function getSpecies(){
     $stmt->closeCursor();
     //The next line sends the array of data back to where the function ws called (this should be the controller)
 
-    var_dump($species);
-    exit;
     return $species;
 
 }
