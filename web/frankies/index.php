@@ -19,4 +19,6 @@ $species = getSpecies();
 // Build the nav list
 
 $navList = getNavList($species);
+
+echo "test";
 ?>
