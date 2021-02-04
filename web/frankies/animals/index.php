@@ -15,11 +15,11 @@ require_once 'library/functions.php';
 
 
 //Get the list of species
-$species = getSpecies();
+$classifications = getClassifications();
 
 // Build the nav list
 
-$navList = getNavList($species);
+$navList = getNavList($classifications);
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -28,10 +28,10 @@ if ($action == NULL) {
 
 switch ($action) {
 
-    case 'species':
-        $speciesType = filter_input(INPUT_GET,'speciesType', FILTER_SANITIZE_STRING);
-        $pageTitle = $speciesType;
-        $animals = getAnimalsByType($speciesType);
+    case 'classification':
+        $classificationType = filter_input(INPUT_GET,'classification_type', FILTER_SANITIZE_STRING);
+        $pageTitle =  $classificationType;
+        $animals = getAnimalsByType($classificationType);
         break;
     default:
         include 'view/home.php';
