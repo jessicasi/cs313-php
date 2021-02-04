@@ -23,6 +23,12 @@ catch (PDOException $ex)
   die();
 }
 
+foreach ($db->query('SELECT animaltype, subtype FROM species') as $row)
+{
+  echo 'Animal: ' . $row['animaltype'];
+  echo ' Sub: ' . $row['subtype'];
+  echo '<br/>';
+}
 
 
 }
