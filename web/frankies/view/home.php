@@ -1,3 +1,5 @@
 <?php include 'common/header.php'?>
 
-<p>testing</p>
+
+
+<?php include 'common/footer.php'?>
