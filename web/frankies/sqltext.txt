@@ -1,0 +1,13 @@
+INSERT INTO public.species(animaltype,subtype,count,description)
+VALUES ('Dog', 'Labrador', 1, 'Black 5 yr old male named Huckleberry. Very affectionate, would do well on a farm or with a family');
+
+INSERT INTO public.species(animaltype,subtype,count,description)
+VALUES ('Cat', 'Short Hair', 1, 'American Short Hair cats are mixed breeds, usually of unknown origin, with short hair.');
+
+
+UPDATE public.species
+SET description = 'Labradors are known for their loyalty and their irresistable need to retrieve things for their humans. A very smart breed that will become your best friend.'
+WHERE subtype = 'Labrador';
+
+INSERT INTO public.species(animaltype,subtype,count,description)
+VALUES ('Cat', 'Long Hair', 1, 'American Long Hair cats are mixed breeds, usually of unknown origin, with long hair.');
