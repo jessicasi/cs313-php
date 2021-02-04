@@ -8,7 +8,7 @@
         INNER JOIN
         classification AS c
         ON a.classification_id = c.classification_id
-        WHERE c.classification_type = :classificaton_type";
+        WHERE c.classification_type = :classification_type";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':classification_type', $classification_type, PDO::PARAM_STR);
         $stmt->execute();
