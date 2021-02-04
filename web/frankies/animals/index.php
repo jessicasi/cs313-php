@@ -43,6 +43,11 @@ switch ($action) {
 
         include '../view/animals.php';
         break;
+
+        case 'information':
+                $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
+                $animal = getAnimalDetails($animal_id);
+            break;
     default:
         include 'view/home.php';
         break;
