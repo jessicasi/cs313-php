@@ -1,6 +1,6 @@
 <?php
 
-
+echo 'test';
 //This is the main controller
 
 //Create or access a Session
