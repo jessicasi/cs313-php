@@ -20,7 +20,7 @@ function buildAnimalDisplay($animals){
    $adv = '<ul id="animal-display">';
    foreach ($animals as $animal){
       $adv.= "<li><a href='../animals?action=information&animal_id=". urlencode($animal['animal_id']) . "'>";
-      $adv .= "<h2>$animal[animal_subtype] - $animal[animal_type]</h2>";
+      $adv .= "<h2>$animal[animal_type] - $animal[animal_subtype]</h2>";
       $adv .= "<p>$animal[animal_name]</p>";
       $adv .= "</a></li>";
    }
