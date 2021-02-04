@@ -17,7 +17,7 @@
 
 <body>
     <div class="contain">
-        <img src="images/frankieLogo.png" alt="Frankie's Farm Logo">
+        <img src="../images/frankieLogo.png" alt="Frankie's Farm Logo">
         <nav class="nav nav-pills flex-column flex-sm-row ">
             <?php include 'nav.php';?>
         </nav>
