@@ -4,9 +4,9 @@
 function getNavList($classifications)
 {
    $navList = '<ul>';
-   $navList .= "<li><a href='../frankies' title='Frankie's Farm Home Page'>Home</a></li>";
+   $navList .= "<li><a href='/frankies' title='Frankie's Farm Home Page'>Home</a></li>";
    foreach ($classifications as $classification) {
-      $navList .= "<li><a href='../frankies/animals?action=classification&classification_type="
+      $navList .= "<li><a href='/frankies/animals?action=classification&classification_type="
          . urlencode($classification['classification_type']) .
          "' title='View our $classification[classification_type]'>$classification[classification_type]</a></li>";
    }

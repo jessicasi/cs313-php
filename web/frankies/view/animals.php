@@ -1,4 +1,4 @@
-<?php include '../common/header.php'?>
+<?php include '/common/header.php'?>
 
 <h1 class="classificationHeadings"><?php echo $classification_type; ?></h1>
 <?php if(isset($_SESSION['message'])){
@@ -10,4 +10,4 @@
 ?>
 
 
-<?php include '../common/footer.php'?>
+<?php include '/common/footer.php'?>
