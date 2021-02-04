@@ -1,7 +1,7 @@
 <?php
 
     //Get list of animals by type
-    function getAnimalsByType($animaltype){
+    function getAnimalsByType($speciesType){
         $db = frankiesFarmConnect();
         
     }
