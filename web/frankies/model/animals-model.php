@@ -15,8 +15,6 @@
         $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
 
-        var_dump($animals);
-        exit;
         return $animals;
     }
 

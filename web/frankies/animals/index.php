@@ -34,6 +34,12 @@ switch ($action) {
         $classification_type = filter_input(INPUT_GET,'classification_type', FILTER_SANITIZE_STRING);
         $pageTitle =  $classification_type;
         $animals = getAnimalsByType($classification_type);
+
+        if(!count($animals)) {
+            $_SESSION['message'] = "<p class='errorMessage'>Sorry, no $classification_type could be found.</p>";
+        }else {
+            $animalDisplay = buildAnimalDisplay($animals);
+        }
         break;
     default:
         include 'view/home.php';
