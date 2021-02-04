@@ -31,9 +31,9 @@ if ($action == NULL) {
 switch ($action) {
 
     case 'classification':
-        $classificationType = filter_input(INPUT_GET,'classification_type', FILTER_SANITIZE_STRING);
-        $pageTitle =  $classificationType;
-        $animals = getAnimalsByType($classificationType);
+        $classification_type = filter_input(INPUT_GET,'classification_type', FILTER_SANITIZE_STRING);
+        $pageTitle =  $classification_type;
+        $animals = getAnimalsByType($classification_type);
         break;
     default:
         include 'view/home.php';
