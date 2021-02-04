@@ -8,7 +8,7 @@ function getNavList($species)
    foreach ($species as $type) {
       $navList .= "<li><a href='../frankies/animals?action=species&speciesName="
          . urlencode($type['animaltype']) .
-         "' title='View our $type[animaltype]'>$species[animaltype]</a></li>";
+         "' title='View our $type[animaltype]'>$$type[animaltype]</a></li>";
    }
    $navList .= '</ul>';
    return $navList;
