@@ -15,9 +15,9 @@
         }
         ?>
         <br>
-        <input type="hidden" name="classificaion_type" value=
+        <input type="hidden" name="classification_type" value=
         <?php
-        echo $classificaion_type
+        echo $classification_type
         ?>>
         <input type="hidden" name="action" value="filterData">
         <input type="submit" name="submit" value="Filter">
