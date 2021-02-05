@@ -72,6 +72,9 @@ switch ($action) {
         }
         $filteredAnimals = getFilteredAnimals($type_id);
         $animalDisplay = buildAnimalDisplay($filteredAnimals);
+
+        echo $filteredAnimals['classification_type'];
+        exit;
         $classification_type = $filteredAnimals['classification_type'];
         $typeList = getTypes($classificaion_type);
         $animalList = buildAnimalList($typelist);

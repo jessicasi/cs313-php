@@ -84,9 +84,6 @@ function getFilteredAnimals($type_id) {
         $stmt->execute();
         $filtered = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
-
-        var_dump($filtered);
-        exit;
     
         return $filtered;
 }
