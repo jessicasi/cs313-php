@@ -7,7 +7,7 @@
 ?>
 
 <div class="formbox">
-    <form method="post" action="/frankies/animals">
+    <form method="post" action="/frankies/animals/index.php">
         <label>Filter Results</label>
         <?php
         if (!empty($animalList)) {
