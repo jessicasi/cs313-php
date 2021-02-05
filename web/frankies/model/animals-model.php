@@ -4,7 +4,7 @@
 function getAnimalsByType($classification_type)
 {
     $db = frankiesFarmConnect();
-    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, c.classification_type, i.imgName, i.img_id, i.img_path, i.img_date
+    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, c.classification_type, i.img_name, i.img_id, i.img_path, i.img_date
         FROM animals AS a
         INNER JOIN
         images AS i
