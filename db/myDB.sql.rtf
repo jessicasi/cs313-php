@@ -72,6 +72,11 @@ ALTER TABLE public.images\
 \
 ALTER TABLE public.images ALTER COLUMN img_type SET DEFAULT 0;\
 \
+CREATE TABLE public.type\
+(\
+	type_id SERIAL NOT NULL PRIMARY KEY,\
+	type_name VARCHAR(50) NOT NULL\
+);\
 \
 \
 INSERT INTO public.classification (classification_type, classification_name)\
