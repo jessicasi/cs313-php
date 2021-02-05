@@ -46,7 +46,7 @@ function buildAnimalList($animals, $types) {
       if($type['classificaion_id'] == $animals['classification_id'])
          $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
          echo "Type Class ID" .$type['classification_id'] ."<br>";
-         echo "Animal Class iD" .$animals['$classificaion_id'] ."<br>";
+         echo "Animal Class iD" .$animals['$classification_id'] ."<br>";
    } 
    exit;
    $typeList .= '</select>';
