@@ -3,11 +3,8 @@ function  getTypes(){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT t.type_id, t.type_name, t.classification_id, c.classification_id, c.classification_type
-         FROM type AS t 
-         INNER JOIN 
-         classification AS c 
-         on t.classification_id = c.classification_id ORDER BY type_name ASC';
+    $sql = 'SELECT t.type_id, t.type_name, t.classification_id
+         FROM type AS t  ORDER BY type_name ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement
@@ -18,6 +15,8 @@ function  getTypes(){
     $stmt->closeCursor();
     //The next line sends the array of data back to where the function ws called (this should be the controller)
 
+    var_dump($types);
+    exit;
     return $types;
 
 }
