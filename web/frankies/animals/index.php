@@ -33,6 +33,7 @@ switch ($action) {
     case 'classification':
         $classification_type = filter_input(INPUT_GET, 'classification_type', FILTER_SANITIZE_STRING);
         $pageTitle =  $classification_type;
+        $_SESSION['classification_type'] = $classification_type;
         $animals = getAnimalsByType($classification_type);
 
         if (!count($animals)) {
@@ -75,8 +76,7 @@ switch ($action) {
 
         echo $filteredAnimals['classification_type'];
         exit;
-        $classification_type = $filteredAnimals['classification_type'];
-        $typeList = getTypes($classificaion_type);
+        $typeList = getTypes($_SESSION['classification_type']);
         $animalList = buildAnimalList($typelist);
 
         include '../view/animals.php';
