@@ -47,6 +47,16 @@ switch ($action) {
         case 'information':
                 $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
                 $animal = getAnimalDetails($animal_id);
+                if (isset($animal['animal_type']) && isset($animal['name'])) {
+                    $pageTitle = "$animal[animal_type] $animal[name]";
+                } 
+                if (count($animal) < 1) {
+                    $message = 'Sorry, no animal information could be found.';
+                } else{
+                    $animalDisplay = buildDetailDisplay($animal);
+                }
+
+                include '../view/animal-detail.php';
             break;
     default:
         include 'view/home.php';

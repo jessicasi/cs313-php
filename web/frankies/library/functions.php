@@ -26,3 +26,14 @@ function buildAnimalDisplay($animals){
    }
    return $adv;
 }
+
+function buildDetailDisplay($animal){
+   $dd = '<div id="animalDisplay">';
+   $dd .= "<h1>$animal[animal_type] $animal[animal_subtype]</h1>"; 
+   $dd .= "<h2>$animal[animal_name]</h2>";
+   $dd .= "<span><img src='$animal[imgPath]' alt='Image of $animal[animal_name]'</span>";
+   $dd .= "<section>>h3>Description</h3></section>";
+   $dd .= "<p>$animal[animal_notes]</p>";
+
+   return $dd;
+}
