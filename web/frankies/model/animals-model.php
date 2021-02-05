@@ -4,11 +4,14 @@
 function getAnimalsByType($classification_type)
 {
     $db = frankiesFarmConnect();
-    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, c.classification_type, i.img_name, i.img_id, i.img_path, i.img_date
+    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, a.type_id, c.classification_type, i.img_name, i.img_id, i.img_path, i.img_date, t.type_id, t.type_name
         FROM animals AS a
         INNER JOIN
         images AS i
         ON a.animal_id = i.animal_id
+        INNER JOIN
+        type AS t
+        ON a.type_id = t.type_id
         INNER JOIN
         classification AS c
         ON a.classification_id = c.classification_id
@@ -18,6 +21,9 @@ function getAnimalsByType($classification_type)
     $stmt->execute();
     $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
+
+    var_dump($animals);
+    exit;
 
     return $animals;
 }
