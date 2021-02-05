@@ -18,7 +18,6 @@ require_once '../library/functions.php';
 
 //Get the list of species
 $classifications = getClassifications();
-//$types = getTypes();
 
 // Build the nav list
 
@@ -41,6 +40,7 @@ switch ($action) {
         }else {
             $animalDisplay = buildAnimalDisplay($animals);
             $typeList = getTypes($classification_type);
+            $animalList = buildAnimalList($typeList);
         }
 
         include '../view/animals.php';

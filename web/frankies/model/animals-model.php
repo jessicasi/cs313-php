@@ -15,8 +15,6 @@ function  getTypes($classification_type){
     $types = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
 
-    var_dump($types);
-    exit;
     return $types;
 
 }
