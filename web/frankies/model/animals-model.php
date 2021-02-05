@@ -73,7 +73,7 @@ function getFilteredAnimals($type_id) {
         animals AS a
         ON t.type_id = a.type_id
         INNER JOIN
-        classificaion AS c
+        classification AS c
         ON t.classification_id = c.classification_id
         INNER JOIN
         images AS i
