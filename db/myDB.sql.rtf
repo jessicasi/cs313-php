@@ -78,6 +78,9 @@ CREATE TABLE public.type\
 	type_name VARCHAR(50) NOT NULL\
 );\
 \
+ALTER TABLE public.type\
+	ADD CONSTRAINT fk_classification_id FOREIGN KEY (classification_id) REFERENCES public.classification (classification_id);\
+\
 \
 INSERT INTO public.classification (classification_type, classification_name)\
 VALUES (\'91Pet\'92, \'91Dog\'92);\
