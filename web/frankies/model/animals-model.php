@@ -35,8 +35,5 @@ function getAnimalDetails($animal_id)
     $animalInfo = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
 
-    var_dump($animalInfo);
-    exit;
-
     return $animalInfo;
 }
