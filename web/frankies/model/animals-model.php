@@ -23,7 +23,7 @@
 
         $sql = 'SELECT  a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes
         FROM animals AS a
-        WHERE i.animal_id LIKE :animal_id';
+        WHERE a.animal_id LIKE :animal_id';
         //INNER JOIN FOR IMAGE WHEN READY
 //INNER JOIN
 //images AS i
