@@ -63,8 +63,7 @@ switch ($action) {
 
     case 'filterData': 
         $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_STRING);
-        echo $type_id;
-        exit;
+       
         //check for missing data
         if (empty($type_id)) {
             $_SESSION['message'] = "Choose an animal to filter results by";
@@ -72,6 +71,8 @@ switch ($action) {
             exit;
         }
         $filteredAnimals = getFilteredAnimals($type_id);
+        var_dump($filteredAnimals);
+        exit;
         $animalDisplay = buildAnimalDisplay($filteredAnimals);
 
         break;
