@@ -36,6 +36,16 @@ function buildDetailDisplay($animal){
    $dd .= "<section><h3>Description</h3></section>";
    $dd .= "<p>$animal[animal_notes]</p>";
 
-
    return $dd;
+}
+
+function buildAnimalList($animals) {
+   $animalList = '<select name="animal_type" id="animal_type">';
+   $animalList .= "<option>Filter By</option>";
+   foreach ($animals as $animal){
+      $animalList .= "<option value='$animal[animal_type]'>$animal[animal_type]</option>";
+   } 
+   $animalList .= '</select>';
+   return $animalList;
+
 }
