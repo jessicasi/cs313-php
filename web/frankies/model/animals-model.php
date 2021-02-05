@@ -1,21 +1,22 @@
 <?php
-function  getTypes(){
+function  getTypes($classification_type){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT t.type_id, t.type_name, t.classification_id
-         FROM type AS t  ORDER BY type_name ASC';
-    //The next line creates the prepeared statement using the phpmotors connection
+    $sql = "SELECT c.classification_type, c.classification_id, t.type_id, t.type_name, t.classification_id
+        FROM type AS t
+        INNER JOIN
+        classification AS c
+        ON t.classification_id = c.classification_id
+        WHERE c.classification_type = :classification_type";
     $stmt = $db->prepare($sql);
-    //The next line runs the prepared statement
+    $stmt->bindValue(':classification_type', $classification_type, PDO::PARAM_STR);
     $stmt->execute();
-    //The next line gets the date from the database and stores it as an array in the $classifications variable
-    $types = $stmt->fetchAll();
-    //The next line closes the interation with the database
+    $types = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    //The next line sends the array of data back to where the function ws called (this should be the controller)
 
-
+    var_dump($types);
+    exit;
     return $types;
 
 }

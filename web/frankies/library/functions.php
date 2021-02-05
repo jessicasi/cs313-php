@@ -39,11 +39,11 @@ function buildDetailDisplay($animal){
    return $dd;
 }
 
-function buildAnimalList($animals, $types) {
+/* function buildAnimalList($classification_type, $types) {
    $typeList = '<select name="type_id" id="type_id">';
    $typeList .= "<option>Filter By</option>";
    foreach ($types as $type){
-      if($type['classificaion_id'] == $animals['classification_id'])
+      if($type['classification_id'] == $animals['classification_id'])
          $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
          echo "Type Class ID" .$type['classification_id'] ."<br>";
          echo "Animal Class iD" .$animals['$classification_id'] ."<br>";
@@ -52,4 +52,4 @@ function buildAnimalList($animals, $types) {
    $typeList .= '</select>';
    return $typeList;
 
-}
+} */
