@@ -5,7 +5,7 @@
     echo$_SESSION['message'];}
 ?>
 <?php if(isset($animalDisplay)){
-    echo $animalList;
+    echo $typeList;
     echo $animalDisplay;
 }
 ?>

@@ -39,13 +39,13 @@ function buildDetailDisplay($animal){
    return $dd;
 }
 
-function buildAnimalList($animals) {
-   $animalList = '<select name="animal_type" id="animal_type">';
-   $animalList .= "<option>Filter By</option>";
-   foreach ($animals as $animal){
-      $animalList .= "<option value='$animal[animal_type]'>$animal[animal_type]</option>";
+function buildAnimalList($types) {
+   $typeList = '<select name="type_id" id="type_id">';
+   $typeList .= "<option>Filter By</option>";
+   foreach ($types as $type){
+      $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
    } 
-   $animalList .= '</select>';
-   return $animalList;
+   $typeList .= '</select>';
+   return $typeList;
 
 }

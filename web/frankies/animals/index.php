@@ -18,6 +18,7 @@ require_once '../library/functions.php';
 
 //Get the list of species
 $classifications = getClassifications();
+$types = getTypes();
 
 // Build the nav list
 
@@ -39,7 +40,7 @@ switch ($action) {
             $_SESSION['message'] = "<p class='errorMessage'>Sorry, no $classification_type could be found.</p>";
         }else {
             $animalDisplay = buildAnimalDisplay($animals);
-            $animalList = buildAnimalList($animals);
+            $typeList = buildAnimalList($types);
         }
 
         include '../view/animals.php';
