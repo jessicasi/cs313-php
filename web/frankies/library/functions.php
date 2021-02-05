@@ -35,6 +35,8 @@ function buildDetailDisplay($animal){
    $dd .= "<section><h3>Description</h3></section>";
    $dd .= "<p>$animal[animal_notes]</p>";
 
-   
+   echo $animal['img_path'];
+   exit;
+
    return $dd;
 }

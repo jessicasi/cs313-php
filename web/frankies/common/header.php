@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Home Page</title>
+    <title><?php if (isset($pageTitle)) {echo $pageTitle;} ?> | Frankie's Farm</title>
     <meta name="description" content="Home Page">
     <meta name="author" content="Jessica Ingebrigtsen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
