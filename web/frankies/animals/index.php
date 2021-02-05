@@ -31,13 +31,13 @@ if ($action == NULL) {
 switch ($action) {
 
     case 'classification':
-        $classification_type = filter_input(INPUT_GET,'classification_type', FILTER_SANITIZE_STRING);
+        $classification_type = filter_input(INPUT_GET, 'classification_type', FILTER_SANITIZE_STRING);
         $pageTitle =  $classification_type;
         $animals = getAnimalsByType($classification_type);
 
-        if(!count($animals)) {
+        if (!count($animals)) {
             $_SESSION['message'] = "<p class='errorMessage'>Sorry, no $classification_type could be found.</p>";
-        }else {
+        } else {
             $animalDisplay = buildAnimalDisplay($animals);
             $typeList = getTypes($classification_type);
             $animalList = buildAnimalList($typeList);
@@ -46,20 +46,35 @@ switch ($action) {
         include '../view/animals.php';
         break;
 
-        case 'information':
-                $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
-                $animal = getAnimalDetails($animal_id);
-                if (isset($animal['animal_type']) && isset($animal['name'])) {
-                    $pageTitle = "$animal[animal_type] $animal[name]";
-                } 
-                if (count($animal) < 1) {
-                    $message = 'Sorry, no animal information could be found.';
-                } else{
-                    $animalDisplay = buildDetailDisplay($animal);
-                }
+    case 'information':
+        $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
+        $animal = getAnimalDetails($animal_id);
+        if (isset($animal['animal_type']) && isset($animal['name'])) {
+            $pageTitle = "$animal[animal_type] $animal[name]";
+        }
+        if (count($animal) < 1) {
+            $message = 'Sorry, no animal information could be found.';
+        } else {
+            $animalDisplay = buildDetailDisplay($animal);
+        }
 
-                include '../view/animal-detail.php';
-            break;
+        include '../view/animal-detail.php';
+        break;
+
+    case 'filterData':
+        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_STRING);
+
+        //check for missing data
+        if (empty($type_id)) {
+            $_SESSION['message'] = "Choose an animal to filter results by";
+            include '../view/animals.php';
+            exit;
+        }
+        $filteredAnimals = getFilteredAnimals($type_id);
+        $animalDisplay = buildAnimalDisplay($filteredAnimals);
+
+        break;
+
     default:
         include 'view/home.php';
         break;

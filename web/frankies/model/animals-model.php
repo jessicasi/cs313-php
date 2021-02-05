@@ -62,3 +62,25 @@ function getAnimalDetails($animal_id)
 
     return $animalInfo;
 }
+
+function getFilteredAnimals($type_id) {
+        //Create a connection object 
+        $db = frankiesFarmConnect();
+        //The SQL statement to be used with the database
+        $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes, i.img_id, i.img_name, i.img_path, i.img_date, i.animal_id, i.classification_id,t.type_id, t.type_name
+        FROM type AS t
+        INNER JOIN
+        animals AS a
+        ON t.type_id = a.type_id
+        INNER JOIN
+        images AS i
+        ON a.animal_id = i.animal_id 
+        WHERE t.type_id = :type_id";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':type_id', $type_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $filtered = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+    
+        return $filtered;
+}

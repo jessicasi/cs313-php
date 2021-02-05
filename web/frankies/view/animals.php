@@ -15,7 +15,7 @@
         }
         ?>
         <br>
-        <input type="hidden" name="action" value="filterDate">
+        <input type="hidden" name="action" value="filterData">
         <input type="submit" name="submit" value="Filter">
     </form>
 </div>
