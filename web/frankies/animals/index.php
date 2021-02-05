@@ -40,7 +40,7 @@ switch ($action) {
             $_SESSION['message'] = "<p class='errorMessage'>Sorry, no $classification_type could be found.</p>";
         }else {
             $animalDisplay = buildAnimalDisplay($animals);
-            $typeList = buildAnimalList($types);
+            $typeList = buildAnimalList($animals, $types);
         }
 
         include '../view/animals.php';

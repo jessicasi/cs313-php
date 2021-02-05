@@ -3,7 +3,7 @@ function  getTypes(){
     //Create a connection object from the phpmotors connection function
     $db = frankiesFarmConnect();
     //The SQL statement to be used with the database
-    $sql = 'SELECT type_id, type_name FROM type ORDER BY type_name ASC';
+    $sql = 'SELECT t.type_id, t.type_name, t.classification_id, c.classification_id, c.classificaion_name FROM type AS t INNER JOIN on classificaion AS c WHERE t.classification_id = c.classification_id ORDER BY type_name ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement
@@ -16,15 +16,13 @@ function  getTypes(){
 
     return $types;
 
-    
-
 }
 
 //Get list of animals by type
 function getAnimalsByType($classification_type)
 {
     $db = frankiesFarmConnect();
-    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, a.type_id, c.classification_type, i.img_name, i.img_id, i.img_path, i.img_date, t.type_id, t.type_name
+    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.classification_id, a.type_id, c.classification_type, i.img_name, i.img_id, i.img_path, i.img_date, t.type_id, t.type_name, t.classification_id
         FROM animals AS a
         INNER JOIN
         images AS i

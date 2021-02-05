@@ -39,11 +39,12 @@ function buildDetailDisplay($animal){
    return $dd;
 }
 
-function buildAnimalList($types) {
+function buildAnimalList($animals, $types) {
    $typeList = '<select name="type_id" id="type_id">';
    $typeList .= "<option>Filter By</option>";
    foreach ($types as $type){
-      $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
+      if($type['classificaion_id'] == $animals['classification_id'])
+         $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
    } 
    $typeList .= '</select>';
    return $typeList;
