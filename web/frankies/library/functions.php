@@ -45,8 +45,8 @@ function buildAnimalList($types) {
    foreach ($types as $type){
          $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
    } 
-   exit;
    $typeList .= '</select>';
+
    return $typeList;
 
 }
