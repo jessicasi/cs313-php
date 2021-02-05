@@ -7,7 +7,7 @@ function  getTypes(){
          FROM type AS t 
          INNER JOIN 
          classificaion AS c 
-         WHERE t.classification_id = c.classification_id ORDER BY type_name ASC';
+         on t.classification_id = c.classification_id ORDER BY type_name ASC';
     //The next line creates the prepeared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     //The next line runs the prepared statement
