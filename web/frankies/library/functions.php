@@ -35,5 +35,6 @@ function buildDetailDisplay($animal){
    $dd .= "<section><h3>Description</h3></section>";
    $dd .= "<p>$animal[animal_notes]</p>";
 
+   
    return $dd;
 }

@@ -28,7 +28,7 @@ function getAnimalDetails($animal_id)
         INNER JOIN
         images AS i
         ON a.animal_id = i.animal_id 
-        WHERE a.animal_id = :animal_id";
+        WHERE i.animal_id = :animal_id";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':animal_id', $animal_id, PDO::PARAM_INT);
     $stmt->execute();
