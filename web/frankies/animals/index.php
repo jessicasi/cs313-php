@@ -71,9 +71,9 @@ switch ($action) {
             exit;
         }
         $filteredAnimals = getFilteredAnimals($type_id);
-        var_dump($filteredAnimals);
-        exit;
         $animalDisplay = buildAnimalDisplay($filteredAnimals);
+
+        include '../view/animals.php';
 
         break;
 
