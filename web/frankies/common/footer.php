@@ -1,6 +1,6 @@
 </main>
 </div>
-<footer>
+<footer class="bg-dark text-center text-white">
     <p>Last Updated: <?php echo date('j F, Y', getlastmod()); ?></p>
 </footer>
 

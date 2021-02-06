@@ -17,6 +17,14 @@ body {
     margin: 0;
     min-width: 360px;
 }
+
+/** Home Page**/
+.bg-image {
+    background-image: url(/images/site/barn.jpg);
+    height: 400px;
+
+}
+
 /** Nav Bar**/
 
 #bannerimg{
