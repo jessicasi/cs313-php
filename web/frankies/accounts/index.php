@@ -13,7 +13,7 @@ require_once '../model/main-model.php';
 //get the main model for use as needed
 require_once '../model/animals-model.php';
 //get the main model for use as needed
-require_once '../model/accounts-model.php';
+//require_once '../model/accounts-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 //Get the reviews model
@@ -33,7 +33,16 @@ if ($action == NULL) {
 }
 
 switch ($action) {
+
+    case 'deliverLoginView':
+        include '../view/log-on.php';
+        break;
     default:
+
+    case 'deliverRegisterView':
+        include '../view/register.php';
+        break;
+
 
     include '../view/register.php';
     break;
