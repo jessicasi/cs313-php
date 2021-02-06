@@ -88,7 +88,17 @@ select {
 
 .detailLink{
     text-decoration: none;
-    
+    color: #024959;
+}
+
+.detailLink:hover{
+    font-size: 1.2rem;
+}
+
+.animalName{
+    color: #D99152;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 
