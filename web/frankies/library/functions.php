@@ -31,11 +31,11 @@ function buildAnimalDisplay($animals){
 
 function buildDetailDisplay($animal){
    $dd = '<div id="animalDisplay">';
-   $dd .= "<h1>$animal[animal_type] $animal[animal_subtype]</h1>"; 
-   $dd .= "<h2>$animal[animal_name]</h2>";
+   $dd .= "<h1>$animal[animal_subtype] - $animal[animal_type]</h1>"; 
+   $dd .= "<h2 class='animalName'>$animal[animal_name]</h2>";
    $dd .= "<span><img src='$animal[img_path]' alt='Image of $animal[animal_name]'></span>";
-   $dd .= "<section><h3>Description</h3></section>";
-   $dd .= "<p>$animal[animal_notes]</p>";
+   $dd .= "<section><h3>Description</h3>";
+   $dd .= "<p>$animal[animal_notes]</p></section>";
 
    return $dd;
 }
