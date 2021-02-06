@@ -10,7 +10,7 @@
 <form method="post" action="/frankies/animals/index.php">
     <div class="row ">
         <div class="col formRight">
-        <label for ="type_id" id="farmLabel">Filter Animals</label>
+        <label for ="type_id" id="farmLabel">Filter</label>
         </div>
         <div class="col">
             <?php

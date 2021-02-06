@@ -66,12 +66,26 @@ body {
     margin-left: 3px;
 }
 
+.col {
+    margin: auto;
+}
+
+select {
+    width: 100px;
+}
+
 
 /**Animal Displays**/
 
 #animal-display {
     list-style:none;
 }
+
+.detailLink{
+    text-decoration: none;
+    
+}
+
 
 
 /**Footer**/
