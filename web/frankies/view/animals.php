@@ -27,7 +27,7 @@
 </form>
 </div>
 
-
+<p>Click on an animal to see more information about it</p>
 <?php if (isset($animalDisplay)) {
     echo $animalDisplay;
 }
