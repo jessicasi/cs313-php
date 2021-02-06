@@ -19,7 +19,7 @@
 
 <body>
     <div class="contain">
-        <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo"></a>
+        <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo" id ="bannerimg"></a>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
