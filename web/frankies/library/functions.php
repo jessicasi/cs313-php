@@ -3,8 +3,8 @@
 //Build the navigation bar
 function getNavList($classifications)
 {
-   $navList = '<div class="collapse navbar-collapse" id="collapsibleNavbar">';
-   $navList .= '<ul class="navbar-nav>';
+   $navList = '<div class="collapse navbar-collapse" id="navbarSupportedContent">';
+   $navList .= '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
    $navList .= "<li class='nav-item'><a  class='nav-link' href='/frankies' title='Frankie's Farm Home Page'>Home</a></li>";
    foreach ($classifications as $classification) {
       $navList .= "<li class='nav-item'><a class='nav-link' href='/frankies/animals?action=classification&classification_type="
