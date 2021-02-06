@@ -20,8 +20,8 @@ body {
 
 /** Home Page**/
 .barn {
-    background-image: url(/frankies/images/site/barn-sm.png);
-    height: 400px;
+    background-image: url(/frankies/images/site/barn-sm.png) no-repeat;
+    height: 800px;
 
 }
 
