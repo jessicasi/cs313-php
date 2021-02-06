@@ -59,6 +59,11 @@ body {
 .divRow{
     background-color: #99A66A;
     margin-bottom: 15px;
+    padding: 3px;
+}
+
+#farmLabel{
+    margin-left: 3px;
 }
 
 /**Footer**/

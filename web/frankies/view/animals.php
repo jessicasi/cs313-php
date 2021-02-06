@@ -10,7 +10,7 @@
 <form method="post" action="/frankies/animals/index.php">
     <div class="row ">
         <div class="col formRight">
-        <label for ="type_id">Filter</label>
+        <label for ="type_id" id="farmLabel">Filter Animals</label>
             <?php
             if (!empty($animalList)) {
                 echo $animalList;
@@ -19,7 +19,7 @@
         </div>
         <div class="col formLeft">
             <input type="hidden" name="action" value="filterData">
-            <input type="submit" name="submit" value="Filter">
+            <input type="submit" name="submit" value="Submit">
         </div>
     </div>
 </form>
