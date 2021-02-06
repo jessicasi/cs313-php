@@ -9,17 +9,17 @@
 
 <form method="post" action="/frankies/animals/index.php">
     <div class="row">
-        <div class="col">
+        
+        <label for ="type_id">Filter Results</label>
             <?php
             if (!empty($animalList)) {
                 echo $animalList;
             }
             ?>
-        </div>
-        <div class="col">
+        
             <input type="hidden" name="action" value="filterData">
             <input type="submit" name="submit" value="Filter">
-        </div>
+        
     </div>
 </form>
 
