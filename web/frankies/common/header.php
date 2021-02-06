@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title><?php if (isset($pageTitle)) {echo $pageTitle;} ?> | Frankie's Farm</title>
+    <title><?php if (isset($pageTitle)) {
+                echo $pageTitle;
+            } ?> | Frankie's Farm</title>
     <meta name="description" content="Home Page">
     <meta name="author" content="Jessica Ingebrigtsen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +19,13 @@
 
 <body>
     <div class="contain">
-        <img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo">
-        <nav class="nav nav-pills flex-column flex-sm-row ">
-            <?php include 'nav.php';?>
+        <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo"></a>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <?php include 'nav.php'; ?>
+            </div>
         </nav>
         <main>
