@@ -8,18 +8,19 @@
 
 
 <form method="post" action="/frankies/animals/index.php">
-    <div class="row">
-        
-        <label for ="type_id">Filter Results</label>
+    <div class="row ">
+        <div class="col formRight">
+        <label for ="type_id">Filter</label>
             <?php
             if (!empty($animalList)) {
                 echo $animalList;
             }
             ?>
-        
+        </div>
+        <div class="col formLeft">
             <input type="hidden" name="action" value="filterData">
             <input type="submit" name="submit" value="Filter">
-        
+        </div>
     </div>
 </form>
 

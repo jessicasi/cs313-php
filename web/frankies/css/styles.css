@@ -46,6 +46,16 @@ body {
     width: 200px;
 }
 
+/**Forms**/
+
+.formRight{
+    text-align: right;
+}
+
+.formLeft {
+    text-align: left;
+}
+
 
 /**Footer**/
 
