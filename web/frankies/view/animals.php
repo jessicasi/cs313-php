@@ -6,7 +6,7 @@
 }
 ?>
 
-
+<div class="divRow">
 <form method="post" action="/frankies/animals/index.php">
     <div class="row ">
         <div class="col formRight">
@@ -23,6 +23,7 @@
         </div>
     </div>
 </form>
+</div>
 
 
 <?php if (isset($animalDisplay)) {
