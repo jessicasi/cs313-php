@@ -14,6 +14,9 @@ require_once '../model/main-model.php';
 require_once '../model/animals-model.php';
 // Get the functions library
 require_once '../library/functions.php';
+//Get accounts model
+//get the main model for use as needed
+require_once '../model/accounts-model.php';
 
 
 //Get the list of species

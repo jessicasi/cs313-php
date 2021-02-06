@@ -35,7 +35,7 @@ function buildDetailDisplay($animal){
    $dd = '<div id="detailDisplay">';
    $dd .= "<h1>$animal[animal_subtype] - $animal[animal_type]</h1>"; 
    $dd .= "<h2 class='animalName'>$animal[animal_name]</h2>";
-   $dd .= "<span><img src='$animal[img_path]' alt='Image of $animal[animal_name]'></span>";
+   $dd .= "<span><img src='$animal[img_path]' alt='Image of $animal[animal_name]' img class='displayImg'></span>";
    $dd .= "<section><h3>Description</h3>";
    $dd .= "<p>$animal[animal_notes]</p></section></div>";
 

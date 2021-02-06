@@ -1,19 +1,21 @@
 <?php
 
-//This is the main controller
+
+//This is the accounts controller
 
 //Create or access a Session
 session_start();
 
 //Get the database connection file
-require_once 'library/connections.php';
+require_once '../library/connections.php';
 //get the main model for use as needed
-require_once 'model/main-model.php';
+require_once '../model/main-model.php';
+//get the main model for use as needed
+require_once '../model/animals-model.php';
+//get the main model for use as needed
+require_once '../model/accounts-model.php';
 // Get the functions library
-require_once 'library/functions.php';
-//Get accounts model
-//get the main model for use as needed
-require_once 'model/accounts-model.php';
+require_once '../library/functions.php';
 
 
 //Get the list of species
@@ -29,13 +31,6 @@ if ($action == NULL) {
 }
 
 switch ($action) {
-
     default:
-        include 'view/home.php';
-        break;
+    break;
 }
-
-unset($_SESSION['message']);
-
-
-?>
