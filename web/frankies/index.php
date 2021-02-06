@@ -11,11 +11,6 @@ require_once 'library/connections.php';
 require_once 'model/main-model.php';
 // Get the functions library
 require_once 'library/functions.php';
-//Get accounts model
-//get the main model for use as needed
-require_once 'model/accounts-model.php';
-//Get the reviews model
-require_once '../model/reviews-model.php';
 
 
 //Get the list of species
