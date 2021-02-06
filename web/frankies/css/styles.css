@@ -4,7 +4,7 @@ html {
     box-sizing: border-box;
     position: relative;
     min-height: 100%;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 }
 
 *, *:before, *:after {
@@ -17,11 +17,11 @@ body {
     margin: 0;
     min-width: 360px;
 }
+/** Nav Bar**/
 
 #bannerimg{
     width: 100%;
 }
-
 
 
 
@@ -31,5 +31,5 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    height: 50px;
 }
