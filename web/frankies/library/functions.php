@@ -22,7 +22,7 @@ function buildAnimalDisplay($animals){
    foreach ($animals as $animal){
       $adv.= "<li><a href='../animals?action=information&animal_id=". urlencode($animal['animal_id']) . "'>";
       $adv .= "<h2>$animal[animal_type] - $animal[animal_subtype]</h2>";
-      $adv .= "<span><img src='$animal[img_path]' alt='Image of $animal[animal_name]'></span>";
+      $adv .= "<span><img class='displayImg' src='$animal[img_path]' alt='Image of $animal[animal_name]'></span>";
       $adv .= "<p>$animal[animal_name]</p>";
       $adv .= "</a></li>";
    }
