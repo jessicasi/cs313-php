@@ -102,6 +102,11 @@ select {
     margin-top: 6px;
 }
 
+#detailDisplay{
+    margin: auto;
+    text-align: center;
+}
+
 
 
 /**Footer**/

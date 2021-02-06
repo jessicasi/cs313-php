@@ -21,21 +21,23 @@ function buildAnimalDisplay($animals){
    $adv = '<ul id="animal-display">';
    foreach ($animals as $animal){
       $adv.= "<li><a class='detailLink' href='../animals?action=information&animal_id=". urlencode($animal['animal_id']) . "'>";
-      $adv .= "<h2>$animal[animal_type] - $animal[animal_subtype]</h2>";
+      $adv .= "<h2>$animal[animal_type]</h2> <h3>$animal[animal_subtype]</h3>";
       $adv .= "<span><img class='displayImg' src='$animal[img_path]' alt='Image of $animal[animal_name]'></span></a>";
       $adv .= "<p class='animalName'>$animal[animal_name]</p>";
       $adv .= "</li>";
    }
+
+      $adv .= "</ul>";
    return $adv;
 }
 
 function buildDetailDisplay($animal){
-   $dd = '<div id="animalDisplay">';
+   $dd = '<div id="detailDisplay">';
    $dd .= "<h1>$animal[animal_subtype] - $animal[animal_type]</h1>"; 
    $dd .= "<h2 class='animalName'>$animal[animal_name]</h2>";
    $dd .= "<span><img src='$animal[img_path]' alt='Image of $animal[animal_name]'></span>";
    $dd .= "<section><h3>Description</h3>";
-   $dd .= "<p>$animal[animal_notes]</p></section>";
+   $dd .= "<p>$animal[animal_notes]</p></section></div>";
 
    return $dd;
 }
