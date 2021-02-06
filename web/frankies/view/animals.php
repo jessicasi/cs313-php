@@ -11,6 +11,8 @@
     <div class="row ">
         <div class="col formRight">
         <label for ="type_id" id="farmLabel">Filter Animals</label>
+        </div>
+        <div class="col">
             <?php
             if (!empty($animalList)) {
                 echo $animalList;

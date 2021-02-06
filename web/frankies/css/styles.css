@@ -66,6 +66,14 @@ body {
     margin-left: 3px;
 }
 
+
+/**Animal Displays**/
+
+#animal-display {
+    list-style:none;
+}
+
+
 /**Footer**/
 
 footer {
