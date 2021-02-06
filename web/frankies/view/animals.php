@@ -6,19 +6,23 @@
 }
 ?>
 
-<div class="formbox">
-    <form method="post" action="/frankies/animals/index.php">
-        <label>Filter Results</label>
-        <?php
-        if (!empty($animalList)) {
-            echo $animalList;
-        }
-        ?>
-        <br>
-        <input type="hidden" name="action" value="filterData">
-        <input type="submit" name="submit" value="Filter">
-    </form>
-</div>
+
+<form method="post" action="/frankies/animals/index.php">
+    <div class="row">
+        <div class="col">
+            <?php
+            if (!empty($animalList)) {
+                echo $animalList;
+            }
+            ?>
+        </div>
+        <div class="col">
+            <input type="hidden" name="action" value="filterData">
+            <input type="submit" name="submit" value="Filter">
+        </div>
+    </div>
+</form>
+
 
 <?php if (isset($animalDisplay)) {
     echo $animalDisplay;
