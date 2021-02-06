@@ -2,7 +2,7 @@
 
 <!-- Background image -->
 <div
-    class="p-5 text-center bg-image barn"
+    class="p-5 text-center bg-image barn img-fluid"
   >
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
       <div class="d-flex justify-content-center align-items-center h-100">
