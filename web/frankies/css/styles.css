@@ -23,8 +23,8 @@ body {
     width: 100%;
 }
 
-nav {
-    background-color: #212529;
+.bg-dark {
+    background-color: #212529!important;
     padding: 0;
 }
 
