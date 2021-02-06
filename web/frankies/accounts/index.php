@@ -17,7 +17,7 @@ require_once '../model/accounts-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 //Get the reviews model
-require_once '../model/reviews-model.php';
+//require_once '../model/reviews-model.php';
 
 
 //Get the list of species
@@ -34,5 +34,7 @@ if ($action == NULL) {
 
 switch ($action) {
     default:
+
+    include '../view/register.php';
     break;
 }

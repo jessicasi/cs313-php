@@ -41,6 +41,11 @@ body {
     width: 50px;
 }
 
+#accountLink{
+    text-decoration: none;
+    color: white;
+}
+
 /**Animal Images**/
 .displayImg {
     width: 200px;
