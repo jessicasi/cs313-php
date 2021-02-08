@@ -1,5 +1,15 @@
-function filterAnimals(event){
-    $animals = event.target.value;
+function filterAnimals($filter){
+    if ($filter.length == 0){
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("animal-display").innerHTML = this.responseText;
+            }
+        }
+    };
+    xmlhttp.open("GET", "/frankies/animals/index.http?action=filterData&&type_id = $filter", true);
 
-    console.log($animals);
+ 
 }
