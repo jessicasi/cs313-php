@@ -1,6 +1,6 @@
 function filterAnimals(event){
-    $filter = event.target.value;
-    if ($filter == 0){
+    let filter = event.target.value;
+    if (filter == 0){
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();
@@ -10,7 +10,7 @@ function filterAnimals(event){
             }
         }
     };
-    xmlhttp.open("GET", "/frankies/animals/index.http?action=filterData&&type_id = $filter", true);
+    xmlhttp.open("GET", "/frankies/animals/index.http?action=filterData&&type_id =" + filter, true);
 
  
 }
