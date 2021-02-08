@@ -18,6 +18,9 @@ body {
     min-width: 360px;
 }
 
+h1{
+    text-align: center;
+}
 /** Home Page**/
 .barn {
     background-image: url(/frankies/images/site/barn-sm.png);
