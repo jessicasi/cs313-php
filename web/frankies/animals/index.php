@@ -79,8 +79,8 @@ switch ($action) {
         $animalDisplay = buildAnimalDisplay($filteredAnimals);
         $typeList = getTypes($_SESSION['classification_type']);
         $animalList = buildAnimalList($typeList);
-
-        include '../view/animals.php';
+        ech
+        //include '../view/animals.php';
 
         break;
 

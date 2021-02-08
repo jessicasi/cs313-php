@@ -1,5 +1,5 @@
 function filterAnimals(event){
-    let filter = event.target.value;
+/*     let filter = event.target.value;
     console.log(filter);
     if (filter === 0){
         return;
@@ -13,6 +13,9 @@ function filterAnimals(event){
         }
     };
     xmlhttp.open("GET", "/frankies/animals/index.http?action=filterData&&type_id =" + filter, true);
+    xmlhttp.send(); */
+
+    
 
  
 }

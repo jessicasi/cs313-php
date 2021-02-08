@@ -114,7 +114,8 @@ select {
 
 /**Forms**/
 .accountForms {
-    
+    width: 90%;
+    margin: auto;
 }
 
 /**Footer**/
