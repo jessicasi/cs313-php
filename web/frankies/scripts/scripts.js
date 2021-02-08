@@ -1,11 +1,13 @@
 function filterAnimals(event){
     let filter = event.target.value;
-    if (filter == 0){
+    console.log(filter);
+    if (filter === 0){
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                console.log("made it here");
                 document.getElementById("animal-display").innerHTML = this.responseText;
             }
         }
