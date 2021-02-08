@@ -1,5 +1,6 @@
-function filterAnimals($filter){
-    if ($filter.length == 0){
+function filterAnimals(event){
+    $filter = event.target.value;
+    if ($filter == 0){
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();
