@@ -43,7 +43,7 @@ function buildDetailDisplay($animal){
 }
 
 function buildAnimalList($types) {
-   $typeList = '<select name="type_id" id="type_id">';
+   $typeList = '<select name="type_id" id="type_id" onchange=filterAnimals(event)>';
    foreach ($types as $type){
          $typeList .= "<option value='$type[type_id]'>$type[type_name]s</option>";
    } 

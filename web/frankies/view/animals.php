@@ -33,5 +33,5 @@
 }
 ?>
 
-
+<script src="../scripts/scripts.js"></script>>
 <?php include '../common/footer.php' ?>
