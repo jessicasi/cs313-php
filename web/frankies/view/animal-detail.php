@@ -6,6 +6,7 @@
 <?php if(isset($animalDisplay)){
     echo $animalDisplay;
 }
+unset($_SESSION['message']);
 ?>
 
 <?php include '../common/footer.php'?>

@@ -31,6 +31,7 @@
 <?php if (isset($animalDisplay)) {
     echo $animalDisplay;
 }
+unset($_SESSION['message']);
 ?>
 
 <script src="../scripts/scripts.js"></script>

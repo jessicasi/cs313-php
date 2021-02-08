@@ -80,8 +80,7 @@ switch ($action) {
         $typeList = getTypes($_SESSION['classification_type']);
         $animalList = buildAnimalList($typeList);
 
-        return;
-        //include '../view/animals.php';
+        include '../view/animals.php';
 
         break;
 
