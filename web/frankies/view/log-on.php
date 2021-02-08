@@ -9,7 +9,7 @@ if (isset($_SESSION['message'])) {
 }
 ?>
 
-<form method="post" action="/frankies/accounts/index.php">
+<form method="post" action="/frankies/accounts/index.php" class="accountForms">
     <div class="row ">
         <div class="col">
             <label for="people_email">*Email Address</label>
