@@ -52,3 +52,24 @@ function buildAnimalList($types) {
    return $typeList;
 
 }
+
+function checkEmail($people_email)
+{
+   $valEmail = filter_var($people_email, FILTER_VALIDATE_EMAIL);
+   return $valEmail;
+}
+
+// Check the password for a minimum of 8 characters,
+// at least one 1 capital letter, at least 1 number and
+// at least 1 special character
+function checkPassword($people_password)
+{
+   $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
+   return preg_match($pattern, $people_password);
+}
+
+function getScreenName($people_fname, $people_lname){
+   $screenName = substr($people_fname, 0,1);
+   $screenName .=$people_lname;
+
+}
