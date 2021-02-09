@@ -230,7 +230,8 @@ switch ($action) {
             
                 $updateOutcome = updatePassword($hashedPassword, $people_id);
         
-        
+                echo $updateOutcome;
+                exit;
                 if ($updateOutcome === 1) {
                     $_SESSION['message'] = "<p class='returnMessage'>Congratulations your password was updated successfully in the database .</p>";
                     include '../view/admin.php';
