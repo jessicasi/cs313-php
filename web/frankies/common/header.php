@@ -27,13 +27,12 @@
                 <?php
                 if (isset($_SESSION['loggedin'])) {
 
-                    echo ' <a href="/frankies/accounts/index.php?action=Logout" title="Logout">Log Out</a>';
+                    echo ' <a href="/frankies/accounts/index.php?action=Logout" class="accountLink title="Logout">Log Out</a>';
                 } else {
-                    echo ' <a href="/frankies/accounts/index.php?action=login" title="Login or Register">My Account</a>';
+                    echo ' <a href="/frankies/accounts/index.php?action=login" class="accountLink title="Login or Register">Log In</a>';
                 }
                 ?>
-
-                <a href="/frankies/accounts?action=deliverLoginView" id="accountLink">My Account</a>
+                <a href="/frankies/accounts?action=deliverAdminView" class="accountLink">My Account</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

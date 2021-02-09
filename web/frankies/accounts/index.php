@@ -228,7 +228,7 @@ switch ($action) {
         
                 //echo $hashedPassword;
             
-                $updateOutcome = updatePassword($hashedPassword, $clientId);
+                $updateOutcome = updatePassword($hashedPassword, $people_id);
         
         
                 if ($updateOutcome === 1) {
@@ -250,6 +250,11 @@ switch ($action) {
                 session_destroy();
                 header('Location: /frankies/');
                 exit;
+
+                case 'deliverAdminView':
+                    $pageTitle = 'My Account';
+        include '../view/admin.php';
+                    break;
 
     default:
         include '../view/register.php';

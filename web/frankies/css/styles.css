@@ -44,7 +44,7 @@ h1{
     width: 50px;
 }
 
-#accountLink{
+.accountLink{
     text-decoration: none;
     color: white;
 }
