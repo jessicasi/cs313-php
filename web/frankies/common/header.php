@@ -20,10 +20,19 @@
 
 <body>
     <div class="contain">
-        <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo" id ="bannerimg"></a>
+        <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo" id="bannerimg"></a>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="/frankies/images/site/pig.png" alt="Frankie the Pig" id="nav-image"></a>
+                <?php
+                if (isset($_SESSION['loggedin'])) {
+
+                    echo ' <a href="/frankies/accounts/index.php?action=Logout" title="Logout">Log Out</a>';
+                } else {
+                    echo ' <a href="/frankies/accounts/index.php?action=login" title="Login or Register">My Account</a>';
+                }
+                ?>
+
                 <a href="/frankies/accounts?action=deliverLoginView" id="accountLink">My Account</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

@@ -242,9 +242,14 @@ switch ($action) {
                     unset($_SESSION['message2']);
                     exit;
                 }
-                
-        
             break;
+            case 'Logout':
+                //remove all session variabless
+                session_unset();
+                //destroy session
+                session_destroy();
+                header('Location: /frankies/');
+                exit;
 
     default:
         include '../view/register.php';

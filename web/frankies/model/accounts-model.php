@@ -83,8 +83,8 @@ function getClient($people_email){
         $sql = 'UPDATE people SET people_password = :people_password WHERE people_id = :people_id';
     
         $stmt = $db->prepare($sql);
-       $stmt->bindValue(':clientPassword', $people_password, PDO::PARAM_STR);
-       $stmt->bindValue(':clientId', $people_id, PDO::PARAM_INT);
+       $stmt->bindValue(':people_password', $people_password, PDO::PARAM_STR);
+       $stmt->bindValue(':people_id', $people_id, PDO::PARAM_INT);
        $stmt->execute();
        $rowsChanged = $stmt->rowCount();
        $stmt->closeCursor();
