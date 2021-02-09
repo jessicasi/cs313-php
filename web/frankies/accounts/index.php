@@ -166,8 +166,7 @@ switch ($action) {
        $people_lname = filter_input(INPUT_POST, 'people_lname', FILTER_SANITIZE_STRING);
        $people_email = filter_input(INPUT_POST, 'people_email', FILTER_SANITIZE_EMAIL);
        $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);
-       echo $people_id;
-       exit;
+      
 
        $clientEmail = checkEmail($people_email);
         //check to see if they are updating email
