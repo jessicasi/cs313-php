@@ -208,7 +208,7 @@ switch ($action) {
         unset($_SESSION['message']);
             break;
 
-            case 'updatePassword':
+        case 'updatePassword':
                 //Filter and store the data
                 $people_password = filter_input(INPUT_POST, 'people_password', FILTER_SANITIZE_STRING);
                 $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);

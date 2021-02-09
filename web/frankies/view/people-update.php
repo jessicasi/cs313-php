@@ -36,7 +36,11 @@ echo $_SESSION['peopleData']['people_email'];
         <input type='submit' name='submit' value='Update Account Information' title="Update Account Information">
     </form>
 
-
+    <?php
+if (isset($_SESSION['message2'])) {
+    echo $_SESSION['message2'];
+}
+?>
 
 <h2 class='updateHeading'>Update Password</h2>
 <div class="form-group  explain">

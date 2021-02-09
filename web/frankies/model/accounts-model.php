@@ -79,6 +79,7 @@ function getClient($people_email){
 
       //Update Password
       function updatePassword($people_password, $people_id){
+          echo $people_password;
         $db = frankiesFarmConnect();
         $sql = 'UPDATE people SET people_password = :people_password WHERE people_id = :people_id';
     
