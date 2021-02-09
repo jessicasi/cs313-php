@@ -44,6 +44,11 @@ switch ($action) {
         include '../view/register.php';
         break;
 
+    case 'registerUser':
+        $pageTitle = 'Registration';
+        
+        break;
+
     default:
         include '../view/register.php';
         break;

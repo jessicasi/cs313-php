@@ -29,7 +29,7 @@ if (isset($_SESSION['message'])) {
             <input type="submit" name="submit" value="Login">
         </div>
 
-    <div class="form-group">
+    <div class="form-group explain">
             <a href='/frankies/accounts/index.php?action=deliverRegisterView' title="Register New Account">I need to register a new account</a>
     </div>
 </form>

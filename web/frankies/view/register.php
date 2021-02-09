@@ -8,7 +8,7 @@ if (isset($_SESSION['message'])) {
 }
 ?>
 
-<form method="post" action="/frankies/accounts/index.php">
+<form method="post" action="/frankies/accounts/index.php" class="accountForms">
 <div class="row">
     <div class="col">
     <label for="people_fname">*First Name</label>
@@ -22,11 +22,11 @@ if (isset($_SESSION['message'])) {
     <div class="row ">
         <div class="col">
             <label for="people_email">*Email Address</label>
-            <input type="email" name="people_email" id="people_email" value='<?php if (isset($peopleEmail)) {
-                                                                                    echo $peopleEmail;
-                                                                                } elseif (isset($_SESSION['peopleData']['people_email'])) {
-                                                                                    echo $_SESSION['peopleData']['people_email'];
-                                                                                } ?>' placeholder="Email Address" required title="Required">
+            <input type="email" name="people_email" id="people_email" 
+            value='<?php if (isset($peopleEmail)) {echo $peopleEmail;
+           } elseif (isset($_SESSION['peopleData']['people_email'])) {
+           echo $_SESSION['peopleData']['people_email'];
+            } ?>' placeholder="Email Address" required title="Required">
         </div>
         <div class="col">
             <label for="people_password">*Password</label>
