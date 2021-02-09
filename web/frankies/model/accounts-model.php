@@ -48,7 +48,7 @@ function getClient($people_email){
    }
 
 
-   function updateClient($people_fname,  $people_lname, $people_email, $people_id){
+   function updateClient($people_fname, $people_lname, $people_email, $people_id){
     $db = frankiesFarmConnect();
     $sql = 'UPDATE people SET people_fname = :people_fname, people_lname = :people_lname, people_email = :people_email WHERE people_id = "people_id';
     $stmt = $db ->prepare($sql);
