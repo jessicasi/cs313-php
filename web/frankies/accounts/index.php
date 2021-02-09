@@ -188,7 +188,7 @@ switch ($action) {
         }
 
         //send data to be updated in the accounts model
-        $updateOutcome = updateClient($people_fname,  $people_lname, $people_email, $people_id);
+        $updateOutcome = updateClient($people_fname, $people_lname, $people_email, $people_id);
         // Check the result and store the correct message, if it failed return to update screen
         if ($updateOutcome === 1) {
             $_SESSION['message'] = "<p class='returnMessage'>Congratulations $people_fname your account was updated successfully in the database .</p>";

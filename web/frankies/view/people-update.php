@@ -31,7 +31,7 @@ value='<?php if (isset($peopleEmail)) {echo $peopleEmail;
 echo $_SESSION['peopleData']['people_email'];
 } ?>' placeholder="Email Address" required title="Required">
 </div>
-        <input type="hidden" name="clientId" value=' <?php if(isset($clientId)){echo $clientId;}elseif (isset($_SESSION['clientData']['clientId'])){echo $_SESSION['clientData']['clientId'];}?>'> 
+        <input type="hidden" name="people_id" value=' <?php if(isset($people_id)){echo $people_id;}elseif (isset($_SESSION['clientData']['people_id'])){echo $_SESSION['clientData']['people_id'];}?>'> 
         <input type="hidden" name="action" value="updatePerson">
         <input type='submit' name='submit' value='Update Account Information' title="Update Account Information">
     </form>
