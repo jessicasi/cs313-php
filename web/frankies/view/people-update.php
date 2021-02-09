@@ -40,7 +40,7 @@ echo $_SESSION['peopleData']['people_email'];
 
 <h2 class='updateHeading'>Update Password</h2>
 <div class="form-group  explain">
-  
+<form method="post" action="/phpmotors/accounts/index.php">
   <label for="people_password">*Password</label>
   <input type="password" name='people_password' placeholder="Password" required title="Required" id="people_password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
   <small class="form-text text-muted explain">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</small>
@@ -52,7 +52,7 @@ echo $_SESSION['peopleData']['people_email'];
   <input type="submit" name="submit" value="Update Password">
 
 </div>
-
+</form>
 
 <?php
 unset($_SESSION['message']);
