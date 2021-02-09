@@ -49,6 +49,19 @@ h1{
     color: white;
 }
 
+.accountLink:hover {
+    color: #99A66A;
+}
+
+.updateLink{
+    text-decoration: none;
+    color:#D99152;
+}
+
+.updateLink:hoverz{
+    color: #024959;
+    font-size: .2rem;
+}
 /**Animal Images**/
 .displayImg {
     width: 200px;
@@ -106,7 +119,6 @@ select {
 
 .detailLink a:hover{
     font-size: 1.6rem;
-    color: #99A66A;
 }
 
 .animalName{

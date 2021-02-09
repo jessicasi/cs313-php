@@ -11,6 +11,13 @@ function getNavList($classifications)
          . urlencode($classification['classification_type']) .
          "' title='View our $classification[classification_type]'>$classification[classification_type]</a></li>";
    }
+   if (isset($_SESSION['loggedin'])) {
+
+      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="accountLink title="Logout">Log Out</a>';
+  
+  } else {
+   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="accountLink title="Login or Register">Log In</a>';
+  }
    $navList .= '</ul></div>';
    return $navList;
 }

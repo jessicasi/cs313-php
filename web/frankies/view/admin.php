@@ -17,7 +17,7 @@
 <section>
     <h2>Account Management</h2>
     <p>Use the below link to update your account information:</p>
-    <a href='/frankies/accounts/index.php?action=mod' title="Update Account">Update Account Information</a>
+    <a href='/frankies/accounts/index.php?action=mod' title="Update Account" class = "updateLink">Update Account Information</a>
 </section>
 
 

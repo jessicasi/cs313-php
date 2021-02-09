@@ -25,15 +25,14 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="/frankies/images/site/pig.png" alt="Frankie the Pig" id="nav-image"></a>
                 <?php
-                if (isset($_SESSION['loggedin'])) {
 
-                    echo ' <a href="/frankies/accounts/index.php?action=Logout" class="accountLink title="Logout">Log Out</a>';
-                    echo '<a href="/frankies/accounts?action=deliverAdminView" class="accountLink">My Account</a>';
-                } else {
-                    echo ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="accountLink title="Login or Register">Log In</a>';
+                if (isset($_SESSION['clientData']['people_fname']) && isset($_SESSION['loggedin'])) {
+                    $people_fname = $_SESSION['clientData']['people_fname'];
+                    echo "<a href='/frankies/accounts/index.php?action=admin' title = 'Admin view link for logged in users'><span id='welcome'>Welcome $people_fname</span></a>";
                 }
+
                 ?>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
