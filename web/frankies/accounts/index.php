@@ -46,6 +46,9 @@ switch ($action) {
 
     case 'registerUser':
         $pageTitle = 'Registration';
+        //filter and store data
+        $people_fname = filter_input(INPUT_POST, 'people_fname', FILTER_SANITIZE_STRING);
+        $people_fname = htmlspecialchars($people_fname);
         
         break;
 
