@@ -28,7 +28,7 @@
 
                 if (isset($_SESSION['clientData']['people_fname']) && isset($_SESSION['loggedin'])) {
                     $people_fname = $_SESSION['clientData']['people_fname'];
-                    echo "<a href='/frankies/accounts/index.php?action=admin' title = 'Admin view link for logged in users'><span id='welcome'>Welcome $people_fname</span></a>";
+                    echo "<a href='/frankies/accounts/index.php?action=deliverAdminView' title = 'Admin view link for logged in users' class='accountLink'><span id='welcome'>Welcome $people_fname</span></a>";
                 }
 
                 ?>

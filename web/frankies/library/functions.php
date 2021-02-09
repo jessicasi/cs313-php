@@ -13,10 +13,10 @@ function getNavList($classifications)
    }
    if (isset($_SESSION['loggedin'])) {
 
-      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="accountLink title="Logout">Log Out</a>';
+      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="navLink title="Logout">Log Out</a>';
   
   } else {
-   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="accountLink title="Login or Register">Log In</a>';
+   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="navLink title="Login or Register">Log In</a>';
   }
    $navList .= '</ul></div>';
    return $navList;

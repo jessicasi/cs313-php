@@ -49,7 +49,7 @@ h1{
     color: white;
 }
 
-.accountLink:hover {
+.navbar a:hover {
     color: #99A66A;
 }
 
@@ -58,7 +58,7 @@ h1{
     color:#D99152;
 }
 
-.updateLink:hoverz{
+.navbar a:hover{
     color: #024959;
     font-size: .2rem;
 }
@@ -117,7 +117,7 @@ select {
     color: #024959;
 }
 
-.detailLink a:hover{
+.animal-display a:hover{
     font-size: 1.6rem;
 }
 
