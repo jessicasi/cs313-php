@@ -51,7 +51,7 @@ if (isset($_SESSION['message2'])) {
 </div>
 
 <div class="form-group  explain">
-
+<input type="hidden" name="people_id" value=' <?php if(isset($people_id)){echo $people_id;}elseif (isset($_SESSION['clientData']['people_id'])){echo $_SESSION['clientData']['people_id'];}?>'> 
   <input type="hidden" name="action" value="updatePassword">
   <input type="submit" name="submit" value="Update Password">
 
