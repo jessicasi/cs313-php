@@ -30,7 +30,7 @@
                     echo ' <a href="/frankies/accounts/index.php?action=Logout" class="accountLink title="Logout">Log Out</a>';
                     echo '<a href="/frankies/accounts?action=deliverAdminView" class="accountLink">My Account</a>';
                 } else {
-                    echo ' <a href="/frankies/accounts/index.php?action=login" class="accountLink title="Login or Register">Log In</a>';
+                    echo ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="accountLink title="Login or Register">Log In</a>';
                 }
                 ?>
                 
