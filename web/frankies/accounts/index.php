@@ -103,7 +103,7 @@ switch ($action) {
 
         $people_password = filter_input(INPUT_POST, 'people_password', FILTER_SANITIZE_STRING);
         $checkPassword = checkPassword($people_password);
-        
+
 
         // Check for missing data
         if (empty($people_email) || empty($people_password)) {
@@ -141,19 +141,109 @@ switch ($action) {
         $_SESSION['screenName'] = $screenName;
 
         //Get all reviews written by user
-       // $personalReviews = getPersonalReviews($_SESSION['clientData']['people_id']);
+        // $personalReviews = getPersonalReviews($_SESSION['clientData']['people_id']);
 
         //if (count($personalReviews)) {
-           // $_SESSION['reviewDisplay'] = buildPersonalReviewDisplay($personalReviews);
+        // $_SESSION['reviewDisplay'] = buildPersonalReviewDisplay($personalReviews);
         //} else {
-          //  $_SESSION['message1'] = "<p class='emptyMessage'>You haven't reviewed anything yet - head to a vehicle detail page to make your first review!</p>";
+        //  $_SESSION['message1'] = "<p class='emptyMessage'>You haven't reviewed anything yet - head to a vehicle detail page to make your first review!</p>";
         //}
 
         // Send them to the admin view
         //include '../view/admin.php';  
-        header('Location: /frankies/accounts');
- 
+        header('Location: /frankies/view/admin.php');
+
         break;
+
+    case 'mod':
+        $pageTitle = 'Update Information';
+        include '../view/people-update.php';
+        break;
+
+        case 'updatePerson':
+                 //Filter and store the data
+       $people_fname = filter_input(INPUT_POST, 'people_fname', FILTER_SANITIZE_STRING);
+       $people_lname = filter_input(INPUT_POST, 'people_lname', FILTER_SANITIZE_STRING);
+       $people_email = filter_input(INPUT_POST, 'people_email', FILTER_SANITIZE_EMAIL);
+       $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);
+
+       $clientEmail = checkEmail($people_email);
+        //check to see if they are updating email
+        if ($clientEmail !== $_SESSION['clientData']['people_email'])
+        {
+            $exisitingEmail = checkExistingEmail($people_email);
+            if ($exisitingEmail) {
+                $_SESSION['message1'] = "<p class='errorMessage'>That email address is already in our system</p>";
+                include '../view/people-update.php';
+                unset($_SESSION['message1']);
+                exit;
+            }
+        }
+        // Check for missing data
+        if (empty($people_fname) || empty($people_lname) || empty($people_email)) {
+            $_SESSION['message1'] = "<p class='errorMessage'>Please provide information for all empty form fields.</p>";
+            include '../view/people-update.php';
+            unset($_SESSION['message1']);
+            exit;
+        }
+
+        //send data to be updated in the accounts model
+        $updateOutcome = updateClient($people_fname,  $people_lname, $people_email, $people_id);
+        // Check the result and store the correct message, if it failed return to update screen
+        if ($updateOutcome === 1) {
+            $_SESSION['message'] = "<p class='returnMessage'>Congratulations $people_fname your account was updated successfully in the database .</p>";
+        } else {
+            $_SESSION['message1'] = "<p class='errorMessage'>Sorry $people_fname, but the account information update failed. Please try again.</p>";
+            include '../view/people-update.php';
+            unset($_SESSION['message1']);
+            exit;
+        }
+        $clientData = getNewClient($people_id);
+        array_pop($clientData);
+        // Store the array into the session
+        $_SESSION['clientData'] = $clientData;
+
+        include '../view/admin.php';
+        unset($_SESSION['message']);
+            break;
+
+            case 'updatePassword':
+                //Filter and store the data
+                $people_password = filter_input(INPUT_POST, 'people_password', FILTER_SANITIZE_STRING);
+                $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);
+                
+                $checkPassword = checkPassword($people_password);
+        
+                if(empty($checkPassword)) 
+                {
+                    $_SESSION['message2'] = "<p class='errorMessage'>Please provide a password that meets the requirements.</p>";
+                    include '../view/people-update.php';
+                    unset($_SESSION['message2']);
+                    exit;
+                }
+        
+                // Hash the checked password
+                $hashedPassword = password_hash($people_password, PASSWORD_DEFAULT);
+        
+                //echo $hashedPassword;
+            
+                $updateOutcome = updatePassword($hashedPassword, $clientId);
+        
+        
+                if ($updateOutcome === 1) {
+                    $_SESSION['message'] = "<p class='returnMessage'>Congratulations your password was updated successfully in the database .</p>";
+                    include '../view/admin.php';
+                    unset($_SESSION['message']);
+                    exit;
+                } else {
+                    $_SESSION['message2'] = '<p class="errorMessage">Sorry, but the password update failed. Please try again.</p>';
+                    include '../view/people-update.php';
+                    unset($_SESSION['message2']);
+                    exit;
+                }
+                
+        
+            break;
 
     default:
         include '../view/register.php';

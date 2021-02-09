@@ -33,6 +33,11 @@ if ($action == NULL) {
 }
 
 switch ($action) {
+    case 'newReview':
+        //Add Review
+        
+        break;
+
     default:
-    break;
+        break;
 }

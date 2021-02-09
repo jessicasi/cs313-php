@@ -48,4 +48,48 @@ function getClient($people_email){
    }
 
 
+   function updateClient($people_fname,  $people_lname, $people_email, $people_id){
+    $db = frankiesFarmConnect();
+    $sql = 'UPDATE people SET people_fname = :people_fname, people_lname = :people_lname, people_email = :people_email WHERE people_id = "people_id';
+    $stmt = $db ->prepare($sql);
+    $stmt->bindValue(':people_fname', $people_fname, PDO::PARAM_STR);
+    $stmt->bindValue(':people_lname', $people_lname, PDO::PARAM_STR);
+    $stmt->bindValue(':people_email', $people_email, PDO::PARAM_STR);
+    $stmt->bindValue(':people_id', $people_id, PDO::PARAM_INT);
+    
+    $stmt->execute();
+   $rowsChanged = $stmt->rowCount();
+   $stmt->closeCursor();
+
+   return $rowsChanged;
+
+   }
+
+   function getNewClient($people_id) {
+    $db = frankiesFarmConnect();
+    $sql = 'SELECT * FROM people WHERE people_id = :people_id';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':people_id', $people_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $clientData;
+   }
+
+      //Update Password
+      function updatePassword($people_password, $people_id){
+        $db = frankiesFarmConnect();
+        $sql = 'UPDATE people SET people_password = :people_password WHERE people_id = :people_id';
+    
+        $stmt = $db->prepare($sql);
+       $stmt->bindValue(':clientPassword', $people_password, PDO::PARAM_STR);
+       $stmt->bindValue(':clientId', $people_id, PDO::PARAM_INT);
+       $stmt->execute();
+       $rowsChanged = $stmt->rowCount();
+       $stmt->closeCursor();
+    
+       return $rowsChanged;
+    
+       }
+
 ?>
