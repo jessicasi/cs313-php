@@ -49,7 +49,13 @@ switch ($action) {
         //filter and store data
         $people_fname = filter_input(INPUT_POST, 'people_fname', FILTER_SANITIZE_STRING);
         $people_fname = htmlspecialchars($people_fname);
-        
+        $people_lname = filter_input(INPUT_POST, 'people_lname', FILTER_SANITIZE_STRING);
+        $people_lname = htmlspecialchars($people_lname);
+        $people_email = filter_input(INPUT_POST, 'people_email', FILTER_SANITIZE_STRING);
+        $people_email = htmlspecialchars($people_email);
+        $people_password = filter_input(INPUT_POST, 'people_password', FILTER_SANITIZE_STRING);
+        $people_password = htmlspecialchars($people_password);
+
         break;
 
     default:
