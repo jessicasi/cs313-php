@@ -86,7 +86,7 @@ switch ($action) {
         // Check and report the result
         if ($regOutcome === 1) {
             $_SESSION['message'] = "<p class='returnMessage'>Thanks for registering $people_fname. Please use your email and password to login.</p>";
-            header('Location: /frankies/accounts/?action=login');
+            header('Location: /frankies/accounts/?action=deliverLoginView');
             exit;
         } else {
             $_SESSION['message'] = "<p>Sorry $people_fname, but the registration failed. Please try again.</p>";
@@ -102,8 +102,8 @@ switch ($action) {
         $people_email = checkEmail($people_email);
 
         $people_password = filter_input(INPUT_POST, 'people_password', FILTER_SANITIZE_STRING);
-        $people_password = checkPassword($people_password);
-
+        $checkPassword = checkPassword($people_password);
+        
 
         // Check for missing data
         if (empty($people_email) || empty($people_password)) {
