@@ -150,8 +150,8 @@ switch ($action) {
         //}
 
         // Send them to the admin view
-        //include '../view/admin.php';  
-        header('Location: /frankies/view/admin.php');
+        include '../view/admin.php';  
+       
 
         break;
 
