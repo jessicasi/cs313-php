@@ -35,15 +35,16 @@ if ($action == NULL) {
 switch ($action) {
 
     case 'deliverLoginView':
+        $pageTitle = 'Log In';
         include '../view/log-on.php';
         break;
-    default:
 
     case 'deliverRegisterView':
+        $pageTitle = 'Registration';
         include '../view/register.php';
         break;
 
-
-    include '../view/register.php';
-    break;
+    default:
+        include '../view/register.php';
+        break;
 }
