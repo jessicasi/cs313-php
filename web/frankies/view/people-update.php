@@ -48,7 +48,7 @@ echo $_SESSION['peopleData']['people_email'];
 
 <div class="form-group  explain">
 
-  <input type="hidden" name="action" value="updatePasword">
+  <input type="hidden" name="action" value="updatePassword">
   <input type="submit" name="submit" value="Update Password">
 
 </div>
