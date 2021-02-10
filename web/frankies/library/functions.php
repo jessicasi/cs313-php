@@ -80,3 +80,36 @@ function getScreenName($people_fname, $people_lname){
    $screenName .=$people_lname;
 
 }
+
+function buildReviewDisplay($reviews){
+   $rv = '<div id="review-display">';
+   foreach ($reviews as $review){
+      $rv .= "<p class='reviewName'>";
+      $rv .= getScreenName($review['people_fname'], $review['people_lname']);
+      $rv .= " wrote on ";
+      $rv .= date("j F, Y", strtotime($review['review_date']));
+      $rv .="</p><p class='reviewInfo'>$review[review_text]";
+   }
+   $rv .=' </div>';
+   return $rv;
+}
+
+function getReviewInfo($review_id){
+   $db = frankiesFarmConnect();
+   $sql = 'SELECT r.review_text, r.review_date, r.type_id. a.type_id
+   FROM reviews r, animals a
+   WHERE review_id = :review_id
+   AND a.type_id = a.typeId';
+   $stmt = $db->prepare($sql);
+   $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
+   $stmt->execute();
+   $reviewInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+   $stmt->closeCursor();
+   return $reviewInfo;
+}
+
+//Get Review Date
+function getReviewDate($review_date){
+   $review_date = date("j F, Y", strtotime(($review_date)));
+   return $review_date;
+  }

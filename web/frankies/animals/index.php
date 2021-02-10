@@ -15,7 +15,7 @@ require_once '../model/animals-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 //Get accounts model
-//require_once '../model/accounts-model.php';
+require_once '../model/accounts-model.php';
 //Get the reviews model
 //require_once '../model/reviews-model.php';
 
@@ -61,6 +61,10 @@ switch ($action) {
             $message = 'Sorry, no animal information could be found.';
         } else {
             $animalDisplay = buildDetailDisplay($animal);
+        }
+        $reviews = getReviews($animals['type_id']);
+        if (count($reviews)){
+            $reviewDisplay = buildReviewDisplay($reviews);
         }
 
         include '../view/animal-detail.php';

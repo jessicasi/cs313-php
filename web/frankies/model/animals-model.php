@@ -48,7 +48,7 @@ function getAnimalDetails($animal_id)
 {
     $db = frankiesFarmConnect();
 
-    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes, i.img_id, i.img_name, i.img_path, i.img_date, i.animal_id, i.classification_id
+    $sql = "SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes, a.type_id, i.img_id, i.img_name, i.img_path, i.img_date, i.animal_id, i.classification_id
         FROM animals AS a
         INNER JOIN
         images AS i
