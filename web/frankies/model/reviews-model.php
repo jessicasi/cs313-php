@@ -39,19 +39,23 @@
 
     function getPersonalReviews($people_id){
         $db = frankiesFarmConnect();
-        $sql = 'SELECT r.review_id, r.review_date, r.type_id
-        FROM reviews r, animal a
-        WHERE people_id = :people_id
-        AND a. = r.invId
-        ORDER BY r.reviewDate DESC';
+        $sql = 'SELECT r.review_id, r.review_text. r.review_date, r.people_id, r.type_id, p.people_id, t.type_id 
+        FROM reviews r
+        INNER JOIN type t
+        ON r.type_id = t.type_id
+        INNER JOIN people p
+        ON p.people_id = r.people_id
+        JOIN ON p.people_id = r.people_id
+        WHERE r.people_id = :people_id
+        ORDER BY r.review_date DESC';
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+        $stmt->bindValue(':people_id', $people_id, PDO::PARAM_INT);
         $stmt->execute();
         $personalReviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $personalReviews;
     }
 
-    }
+    
 
 ?>
