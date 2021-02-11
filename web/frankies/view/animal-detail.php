@@ -20,12 +20,12 @@ if (!isset($_SESSION['loggedin'])) {
     echo '<form method="post" action="/frankies/reviews/index.php" class="accountForms">';
     echo '<div class="form-group explain">';
     echo '<label for="screenName">Screen Name</label>';
-    echo '<input type="text" name="screenName" class="form-control readonly value=';
+    echo '<input type="text" name="screenName" class="form-control" readonly value=';
     echo $_SESSION['screenName'];
     echo '>';
     echo '</div><div class="form-group explain">';
     echo '<label for="review_text">Review</label>';
-    echo '<textarea  class="form-control name="review_text" required></textarea>';
+    echo '<textarea  class="form-control" name="review_text" required></textarea>';
     echo' </div>';
     echo '<input type="hidden" name="type_id" value=';
     echo $animal['type_id'];
