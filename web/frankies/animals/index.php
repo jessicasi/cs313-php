@@ -17,7 +17,7 @@ require_once '../library/functions.php';
 //Get accounts model
 require_once '../model/accounts-model.php';
 //Get the reviews model
-//require_once '../model/reviews-model.php';
+require_once '../model/reviews-model.php';
 
 
 //Get the list of species
