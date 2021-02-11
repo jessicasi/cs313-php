@@ -116,5 +116,16 @@ function getReviewDate($review_date){
   
 
   function buildPersonalReviewDisplay($personalReviews){
-     
+   $prv = '<ul>';
+   foreach ($personalReviews as $pr){
+
+      $prv .= "<li> $pr[invMake] $pr[invModel]";
+      $prv .= "(Reviewed on ";
+      $prv .= date("j F, Y", strtotime($pr['reviewDate']));
+      $prv .= ")";
+      $prv .= "<a href='/phpmotors/reviews/index.php?action=deliverEditView&reviewId=$pr[reviewId]' title=' Deliver Edit Review' > Edit </a> | <a href='/phpmotors/reviews/index.php?action=deliverDeleteView&reviewId=$pr[reviewId]' title='Deliver Delete View'> Delete </a></li>";
+   }
+   $prv .='</ul>';
+ 
+   return $prv;
   }

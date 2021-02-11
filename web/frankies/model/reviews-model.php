@@ -39,12 +39,14 @@
 
     function getPersonalReviews($people_id){
         $db = frankiesFarmConnect();
-        $sql = 'SELECT r.review_id, r.review_text. r.review_date, r.people_id, r.type_id, p.people_id, t.type_id 
-        FROM reviews r
-        INNER JOIN type t
+        $sql = 'SELECT r.review_id, r.review_text. r.review_date, r.people_id, r.type_id, p.people_id, t.type_id, t.type_name 
+        FROM reviews AS r
+        INNER JOIN 
+        type AS t
         ON r.type_id = t.type_id
-        INNER JOIN people p
-        ON p.people_id = r.people_id
+        INNER JOIN 
+        people AS p
+        ON r.people_id = p.people_id
         WHERE r.people_id = :people_id
         ORDER BY r.review_date DESC';
         $stmt = $db->prepare($sql);
@@ -54,7 +56,5 @@
         $stmt->closeCursor();
         return $personalReviews;
     }
-
-    
 
 ?>
