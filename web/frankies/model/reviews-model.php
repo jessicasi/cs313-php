@@ -39,6 +39,7 @@
 
     function getPersonalReviews($people_id){
         $db = frankiesFarmConnect();
+        $sql = 'SELECT r.review_id, r.review_text, r.review_date, r.people_id, r.type_id, p.people_id, t.type_id, t.type_name 
         FROM reviews AS r
         INNER JOIN 
         type AS t
