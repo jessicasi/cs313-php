@@ -20,7 +20,19 @@
     <a href='/frankies/accounts/index.php?action=mod' title="Update Account" class = "updateLink">Update Account Information</a>
 </section>
 
+<section class="manageReviews">
+<h2 class="accountHeadings">Manage Your Product Reviews</h2><?php
+if (isset($_SESSION['message1'])) {
+    echo $_SESSION['message1'];
+}
+?>
+<?php
+if (isset($_SESSION['reviewDisplay'])){
+    echo $_SESSION['reviewDisplay'];
+}
+?>
 
+</section>
 
 
 

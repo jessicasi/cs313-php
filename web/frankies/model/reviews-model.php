@@ -37,5 +37,9 @@
     }
 
 
+    function getPersonalReviews($review_id){
+
+
+    }
 
 ?>

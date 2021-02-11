@@ -30,8 +30,6 @@ if (!isset($_SESSION['loggedin'])) {
     echo '<input type="hidden" name="type_id" value=';
     echo $animal['type_id'];
     echo '>';
-    echo $animal['type_id'];
-    exit;
     echo '<input type="hidden" name="animal_id" value=';
     echo $animal['animal_id'];
     echo '>';

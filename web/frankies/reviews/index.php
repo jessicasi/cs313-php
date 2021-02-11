@@ -41,6 +41,9 @@ switch ($action) {
         $type_id = filter_input(INPUT_GET, 'type_id', FILTER_SANITIZE_NUMBER_INT);
         $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);
 
+        echo $type_id;
+        exit;
+
         //Check for missing data
         if (empty($review_text)){
             $_SESSION['message'] = '<p class="errorMessage">Please provide information for all form fields.</p>';
