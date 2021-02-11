@@ -139,6 +139,10 @@ li .detailLink:hover{
     margin: auto;
 }
 
+#welcome:hover{
+    color: #99A66A;
+}
+
 /**Footer**/
 
 footer {

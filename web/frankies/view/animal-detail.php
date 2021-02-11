@@ -1,11 +1,12 @@
-<?php include '../common/header.php'?>
+<?php include '../common/header.php' ?>
 
-<?php if(isset($_SESSION['message'])){
-    echo$_SESSION['message'];}
+<?php if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'];
+}
 ?>
-<?php if(isset($animalDisplay)){
+<?php if (isset($animalDisplay)) {
     echo $animalDisplay;
-}?>
+} ?>
 
 <h2>Customer Reviews</h2>
 <?php
@@ -16,13 +17,16 @@ if (!isset($_SESSION['loggedin'])) {
         echo $_SESSION['message'];
     }
     echo '<div>';
-    echo '<form method="post" action="/frankies/reviews/index.php">';
+    echo '<form method="post" action="/frankies/reviews/index.php" class="accountForms">';
+    echo '<div class="form-group explain">';
     echo '<label for="screenName">Screen Name</label>';
     echo '<input type="text" name="screenName" readonly value=';
     echo $_SESSION['screenName'];
     echo '>';
+    echo '</div><div class="form-group explain">';
     echo '<label for="review_text">Review</label>';
     echo '<textarea name="review_text" required></textarea>';
+    echo' </div>';
     echo '<input type="hidden" name="type_id" value=';
     echo $animal['type_id'];
     echo '>';
@@ -33,13 +37,15 @@ if (!isset($_SESSION['loggedin'])) {
     echo $_SESSION['clientData']['people_id'];
     echo '>';
     echo '<input type="hidden" name="action" value="newReview">';
+    echo ' echo <div class="form-group explain">';
     echo '<input type="submit" name="submit" value="Submit Review" title="Submit Review">';
+    echo' </div>';
     echo '</form></div>';
-} 
+}
 if (isset($reviewDisplay)) {
     echo  $reviewDisplay;
 };
 unset($_SESSION['message']);
 ?>
 
-<?php include '../common/footer.php'?>
+<?php include '../common/footer.php' ?>
