@@ -96,7 +96,7 @@ function buildReviewDisplay($reviews){
 
 function getReviewInfo($review_id){
    $db = frankiesFarmConnect();
-   $sql = 'SELECT r.review_text, r.review_date, r.type_id. a.type_id
+   $sql = 'SELECT r.review_text, r.review_date, r.type_id, a.type_id
    FROM reviews r, animals a
    WHERE review_id = :review_id
    AND a.type_id = a.typeId';
