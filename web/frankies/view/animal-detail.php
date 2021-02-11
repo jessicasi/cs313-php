@@ -24,10 +24,10 @@ if (!isset($_SESSION['loggedin'])) {
     echo '<label for="review_text">Review</label>';
     echo '<textarea name="review_text" required></textarea>';
     echo '<input type="hidden" name="type_id" value=';
-    echo $animals['type_id'];
+    echo $animal['type_id'];
     echo '>';
     echo '<input type="hidden" name="animal_id" value=';
-    echo $animals['animal_id'];
+    echo $animal['animal_id'];
     echo '>';
     echo '<input type="hidden" name="[people_id" value=';
     echo $_SESSION['clientData']['people_id'];
