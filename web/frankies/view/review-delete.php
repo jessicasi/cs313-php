@@ -10,7 +10,7 @@ if (isset($_SESSION['message'])) {
 
 <p> Reviewed On <?php if(isset($_SESSION['reviewInfo']['review_date'])){echo $_SESSION['reviewInfo']['review_date'];}?></p>
 
-<p class="errorMessage">Warning: deleting a review is permenant, and cannot be undone</p>
+<small class="form-text text-muted">** Deleting a review is permenant, and cannot be undone **</small>
 
 <form method="post" action="/frankies/reviews/index.php" class="accountForms">
 <div class="form-group explain">
