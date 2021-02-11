@@ -13,10 +13,10 @@ function getNavList($classifications)
    }
    if (isset($_SESSION['loggedin'])) {
 
-      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="navLink title="Logout">Log Out</a>';
+      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="navLink" title="Logout">Log Out</a>';
   
   } else {
-   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="navLink title="Login or Register">Log In</a>';
+   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="navLink" title="Login or Register">Log In</a>';
   }
    $navList .= '</ul></div>';
    return $navList;
@@ -78,7 +78,7 @@ function checkPassword($people_password)
 function getScreenName($people_fname, $people_lname){
    $screenName = substr($people_fname, 0,1);
    $screenName .=$people_lname;
-
+   return $screenName;
 }
 
 function buildReviewDisplay($reviews){
