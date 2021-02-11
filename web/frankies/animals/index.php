@@ -62,7 +62,7 @@ switch ($action) {
         } else {
             $animalDisplay = buildDetailDisplay($animal);
         }
-        $reviews = getReviews($animals['type_id']);
+        $reviews = getReviews($animal['type_id']);
         if (count($reviews)){
             $reviewDisplay = buildReviewDisplay($reviews);
         }
