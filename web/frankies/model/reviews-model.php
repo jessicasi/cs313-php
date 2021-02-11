@@ -45,7 +45,6 @@
         ON r.type_id = t.type_id
         INNER JOIN people p
         ON p.people_id = r.people_id
-        JOIN ON p.people_id = r.people_id
         WHERE r.people_id = :people_id
         ORDER BY r.review_date DESC';
         $stmt = $db->prepare($sql);
