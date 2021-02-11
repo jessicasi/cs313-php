@@ -113,3 +113,8 @@ function getReviewDate($review_date){
    $review_date = date("j F, Y", strtotime(($review_date)));
    return $review_date;
   }
+  
+
+  function buildPersonalReviewDisplay($personalReviews){
+     
+  }
