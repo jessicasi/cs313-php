@@ -99,7 +99,7 @@ function getReviewInfo($review_id){
    $sql = 'SELECT r.review_text, r.review_date, r.type_id, a.type_id
    FROM reviews r, animals a
    WHERE review_id = :review_id
-   AND a.type_id = a.typeId';
+   AND a.type_id = a.type_id';
    $stmt = $db->prepare($sql);
    $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
    $stmt->execute();
