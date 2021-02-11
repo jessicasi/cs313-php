@@ -257,6 +257,6 @@ switch ($action) {
                     break;
 
     default:
-        include '../view/register.php';
+        include '../view/admin.php';
         break;
 }
