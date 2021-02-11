@@ -119,11 +119,11 @@ function getReviewDate($review_date){
    $prv = '<ul>';
    foreach ($personalReviews as $pr){
 
-      $prv .= "<li> $pr[invMake] $pr[invModel]";
+      $prv .= "<li> $pr[type_namw]";
       $prv .= "(Reviewed on ";
-      $prv .= date("j F, Y", strtotime($pr['reviewDate']));
+      $prv .= date("j F, Y", strtotime($pr['review_date']));
       $prv .= ")";
-      $prv .= "<a href='/phpmotors/reviews/index.php?action=deliverEditView&reviewId=$pr[reviewId]' title=' Deliver Edit Review' > Edit </a> | <a href='/phpmotors/reviews/index.php?action=deliverDeleteView&reviewId=$pr[reviewId]' title='Deliver Delete View'> Delete </a></li>";
+      $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title=' Deliver Edit Review' > Edit </a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View'> Delete </a></li>";
    }
    $prv .='</ul>';
  

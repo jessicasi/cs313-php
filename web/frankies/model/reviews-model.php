@@ -57,4 +57,31 @@
         return $personalReviews;
     }
 
-?>
+    function updateReview($review_text, $review_id){
+        $db = frankiesFarmConnect();
+        $sql = 'UPDATE reviews SET review_text = :review_text
+         WHERE review_id = :review_id';
+         $stmt = $db->prepare($sql);
+         $stmt->bindValue(':review_text', $review_text, PDO::PARAM_STR);
+         $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
+         $stmt->execute();
+         $rowsChanged = $stmt->rowCount();
+         $stmt->closeCursor();
+    
+         return $rowsChanged;
+
+    }
+
+    //Delete a specific review
+function deleteReview($review_id){
+
+    $db = frankiesFarmConnect();
+    // The SQL statement
+    $sql = 'DELETE FROM reviews WHERE review_id = :review_id';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
