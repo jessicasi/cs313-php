@@ -176,9 +176,8 @@ switch ($action) {
         }
         include '../view/animal-delete.php';
         break;
-    case 'deleteVehicle':
+    case 'deleteAnimal':
         // Filter and store the data
-        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
         $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
         $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
         // $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
@@ -190,14 +189,103 @@ switch ($action) {
 
         // Check and report the result
         if ($deleteOutcome === 1) {
-            $_SESSION['message'] = "<p class='returnMessage'>Congratulations your $invMake $invModel was successfully deleted from the database .</p>";
-            header('location: /phpmotors/vehicles/');
+            $_SESSION['message'] = "<p'>Congratulations your Animal was successfully deleted from the database .</p>";
+            header('location: /frankies/animals/');
             exit;
         } else {
-            $_SESSION['message'] = '<p class="errorMessage">Error: $invMake $invModel was not deleted.</p>';
-            header('location: /phpmotors/vehicles/');
+            $_SESSION['message'] = '<p>Error: Animal was not deleted.</p>';
+            header('location: /frankies/animals/');
             exit;
         }
+        break;
+    case 'deliverAnimalTypeView':
+        $pageTitle = 'Add Type';
+        include '../view/add-type.php';
+        break;
+    case 'deliverAnimalView':
+        $pageTitle = 'Add Animal';
+        include '../view/add-animal.php';
+        break;
+    case 'addAnimal':
+        // Filter and store the data
+        $classification_id = filter_input(INPUT_POST, 'classification_id', FILTER_SANITIZE_NUMBER_INT);
+        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
+        $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
+        $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
+        $animal_notes = filter_input(INPUT_POST, 'animal_notes', FILTER_SANITIZE_STRING);
+        $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
+        //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
+        //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
+        
+        // Check for missing data
+        if (empty($animal_name) || empty($animal_age) || empty($animal_notes)) {
+            $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
+            $pageTitle = 'Add Vehicle';
+            include '../view/animal-update.php';
+            exit;
+        }
+        if (empty($classification_id)) {
+            $_SESSION['message'] = '<p>Classification error.</p>';
+            include '../view/animal-update.php';
+            exit;
+        }
+
+        if (empty($type_id)) {
+            $_SESSION['message'] = '<p>Type error.</p>';
+            include '../view/animal-update.php';
+            exit;
+        }
+        // Send the data to the model
+
+        //Temporary variable change for the image and thumnail
+        //$invImage = '../images/vehicles/no-image.png';
+        //$invThumbnail = '../images/vehicles/no-image.png';
+
+        $animal_type = getTypeName($type_id);
+        $addOutcome = addAnimal($animal_type,$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
+        // Check and report the result
+        if($addOutcome === 1) {
+            $_SESSION['message'] = "<p'>Congratulations your Animal was added successfully to the database .</p>";
+            include '../view/add-animal.php';
+            unset($_SESSION['message']);
+            exit;
+        } else {
+            $_SESSION['message'] = '<p">Sorry, but the animal adding failed. Please try again.</p>';
+            include '../view/animal-man.php';
+            unset($_SESSION['message']);
+            exit;
+        }
+
+        break;
+
+    case 'addType':
+        $pageTitle = 'Add Type';
+        //Add Classification Controls
+        // Filter and store the data
+        $classification_id = filter_input(INPUT_POST, 'classification_id', FILTER_SANITIZE_NUMBER_INT);
+        $type_name = filter_input(INPUT_POST, 'type_name');
+        // Check for missing data
+        if (empty($type_name)) {
+            $_SESSION['message'] = '<p>Please provide information for all form fields.</p>';
+            include '../view/add-type.php';
+            unset($_SESSION['message']);
+            exit;
+        }
+
+        // Send the data to the model
+        $classOutcome = addType($type_name, $classification_id);
+
+        // Check and report the result
+        if ($classOutcome === 1) {
+            header("Location: /frankies/animals/");
+            exit;
+        } else {
+            $_SESSION['message'] = '<p class="">Sorry, but the type adding failed. Please try again.</p>';
+            include '../view/animal-man.php';
+            unset($_SESSION['message']);
+            exit;
+        }
+
         break;
     default:
 

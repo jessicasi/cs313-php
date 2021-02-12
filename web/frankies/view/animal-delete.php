@@ -14,7 +14,7 @@ if (isset($_SESSION['message'])) {
 <form method="post" action="/frankies/animals/index.php" class="accountForms">
 <div class="form-group explain">
 <label for="type_name">Animal Type</label>
-<input type="text" name="type_name" id="type_name" readonly <?php if(isset($type['type_name'])) {echo "value='$type[type_name]'"; }?>>
+<input type="text" name="type_name" id="type_name" readonly <?php if(isset($animalInfo['animal_type'])) {echo "value='$animalInfo[animal_type]'"; }?>>
 </div>
 <div class="form-group explain">
 <label for="animal_subtype">SubType</label>
