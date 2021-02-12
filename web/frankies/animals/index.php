@@ -106,64 +106,99 @@ switch ($action) {
         }
         $classificationList = buildClassSelect($classifications);
         $typeList = buildTypeList($types);
-  
+
 
         if (isset($animal_info['animal_name'])) {
             $pageTitle = "Modify $animal_info[animal_name])";
-        } 
+        }
         include '../view/animal-update.php';
         break;
 
-        case 'updateAnimal':
-            // Filter and store the data
-            $classification_id = filter_input(INPUT_POST, 'classification_id', FILTER_SANITIZE_NUMBER_INT);
-            $type_id = filter_input(INPUT_POST,'type_id', FILTER_SANITIZE_NUMBER_INT);
-            $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
-            $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
-            $animal_notes = filter_input(INPUT_POST, 'animal_notes', FILTER_SANITIZE_STRING);
-            //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
-            //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
-            $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
-    
-            //Filter through array created to find classification ID
-    
-            // Check for missing data
-            if (empty($animal_name) || empty($animal_age) || empty($animal_notes)) {
-                $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
-                $pageTitle = 'Add Vehicle';
-                include '../view/animal-update.php';
-                exit;
-            }
-            if (empty($classification_id)) {
-                $_SESSION['message'] = '<p>Classification error.</p>';
-                include '../view/animal-update.php';
-                exit;
-            }
+    case 'updateAnimal':
+        // Filter and store the data
+        $classification_id = filter_input(INPUT_POST, 'classification_id', FILTER_SANITIZE_NUMBER_INT);
+        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
+        $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
+        $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
+        $animal_notes = filter_input(INPUT_POST, 'animal_notes', FILTER_SANITIZE_STRING);
+        //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
+        //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
+        $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
 
-            if (empty($type_id)) {
-                $_SESSION['message'] = '<p>Type error.</p>';
-                include '../view/animal-update.php';
-                exit;
-            }
-            // Send the data to the model
-    
-            //Temporary variable change for the image and thumnail
-            //$invImage = '../images/vehicles/no-image.png';
-            //$invThumbnail = '../images/vehicles/no-image.png';
-    
-            $updateOutcome = updateAnimal($classification_id,$type_id, $animal_name, $animal_age, $animal_notes, $animal_id);
-    
-            // Check and report the result
-            if ($updateOutcome === 1) {
-                $_SESSION['message'] = "<p>Congratulations your Animal was updated successfully in the database .</p>";
-                header('location: /frankies/animals/');
-                exit;
-            } else {
-                $_SESSION['message'] = '<p>Sorry, but the animal update failed. Please try again.</p>';
-                include '../view/animal-update.php';
-                exit;
-            }
-            break;
+        //Filter through array created to find classification ID
+
+        // Check for missing data
+        if (empty($animal_name) || empty($animal_age) || empty($animal_notes)) {
+            $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
+            $pageTitle = 'Add Vehicle';
+            include '../view/animal-update.php';
+            exit;
+        }
+        if (empty($classification_id)) {
+            $_SESSION['message'] = '<p>Classification error.</p>';
+            include '../view/animal-update.php';
+            exit;
+        }
+
+        if (empty($type_id)) {
+            $_SESSION['message'] = '<p>Type error.</p>';
+            include '../view/animal-update.php';
+            exit;
+        }
+        // Send the data to the model
+
+        //Temporary variable change for the image and thumnail
+        //$invImage = '../images/vehicles/no-image.png';
+        //$invThumbnail = '../images/vehicles/no-image.png';
+
+        $updateOutcome = updateAnimal($classification_id, $type_id, $animal_name, $animal_age, $animal_notes, $animal_id);
+
+        // Check and report the result
+        if ($updateOutcome === 1) {
+            $_SESSION['message'] = "<p>Congratulations your Animal was updated successfully in the database .</p>";
+            header('location: /frankies/animals/');
+            exit;
+        } else {
+            $_SESSION['message'] = '<p>Sorry, but the animal update failed. Please try again.</p>';
+            include '../view/animal-update.php';
+            exit;
+        }
+        break;
+    case 'del':
+        $animal_id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        $animalInfo = getAnimalInfo($animal_id);
+        if (count($animalInfo) < 1) {
+            $message = 'Sorry, no animal information could be found.';
+        }
+
+        if (isset($animal_info['animal_name'])) {
+            $pageTitle = "Modify $animal_info[animal_name])";
+        }
+        include '../view/animal-delete.php';
+        break;
+    case 'deleteVehicle':
+        // Filter and store the data
+        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
+        $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
+        $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
+        // $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
+        $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
+
+        // Send the data to the model
+
+        $deleteOutcome = deleteAnimal($animal_id);
+
+        // Check and report the result
+        if ($deleteOutcome === 1) {
+            $_SESSION['message'] = "<p class='returnMessage'>Congratulations your $invMake $invModel was successfully deleted from the database .</p>";
+            header('location: /phpmotors/vehicles/');
+            exit;
+        } else {
+            $_SESSION['message'] = '<p class="errorMessage">Error: $invMake $invModel was not deleted.</p>';
+            header('location: /phpmotors/vehicles/');
+            exit;
+        }
+        break;
     default:
 
         $typeList = buildTypeList($types);

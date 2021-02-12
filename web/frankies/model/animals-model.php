@@ -146,3 +146,7 @@ function updateAnimal($classification_id,$type_id, $animal_name, $animal_age, $a
     // Return the indication of success (rows changed)
     return $rowsChanged;
 }
+
+function deleteAnimal($animal_id){
+
+}

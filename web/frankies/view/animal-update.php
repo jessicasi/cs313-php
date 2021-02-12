@@ -91,5 +91,5 @@ if (isset($_SESSION['message'])) {
 
 </form>
 
-
+<?php unset($_SESSION['message']);?>
 <?php include '../common/footer.php' ?>
