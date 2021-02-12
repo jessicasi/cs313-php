@@ -102,13 +102,12 @@ function getAllTypes(){
 }
 
 function getAnimalInfo($animal_id){
-    echo $animal_id;
     $db = frankiesFarmConnect();
     $sql = 'SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes, a.classification_id, a.type_id, i.img_id, i.img_name, i.img_path, i.img_date, i.animal_id, i.classification_id
     FROM animals AS a
 	INNER JOIN
     images as i
-    ON a.animal_id = i.animal_id  WHERE i.animal_id LIKE :animal_id';
+    ON a.animal_id = i.animal_id  WHERE i.animal_id = :animal_id';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':animal_id', $animal_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -116,4 +115,34 @@ function getAnimalInfo($animal_id){
     $stmt->closeCursor();
     return $animalInfo;
 
+}
+
+function updateAnimal($classification_id,$type_id, $animal_name, $animal_age, $animal_notes, $animal_id){
+    // Create a connection object using the phpmotors connection function
+    $db = frankiesFarmConnect();
+    // The SQL statement
+    $sql = 'UPDATE animals SET animal_name = :animal_name, animal_age = :animal_age, 
+	animal_notes = :animal_notes,classification_id = :classification_id, type_id = :type_id WHERE animal_id = :animal_id';
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    // The next four lines replace the placeholders in the SQL
+    // statement with the actual values in the variables
+    // and tells the database the type of data it is
+    $stmt->bindValue(':animal_name', $animal_name, PDO::PARAM_STR);
+    $stmt->bindValue(':animal_age', $animal_age, PDO::PARAM_INT);
+    $stmt->bindValue(':animal_notes', $animal_notes, PDO::PARAM_STR);
+    //$stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
+    //$stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
+    $stmt->bindValue(':classification_id', $classification_id, PDO::PARAM_INT);
+    $stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
+    $stmt->bindValue(':animal_id', $animal_id, PDO::PARAM_INT);
+
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
 }

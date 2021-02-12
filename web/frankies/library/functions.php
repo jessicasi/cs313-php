@@ -142,3 +142,14 @@ function buildTypeList($types)
    $typeList .= '</select>';
    return $typeList;
 }
+
+function buildClassSelect($classifications){
+   $classificationList = '<select id="typeList">';
+   $classificationList .= "<option>Choose a Classification</option>";
+   foreach ($classifications as $classification) {
+      $classificationList .= "<option value='$classification[classification_id]'>$classification[classification_type]</option>";
+   }
+   $classificationList .= '</select>';
+   return $classificationList;
+}
+

@@ -13,7 +13,7 @@ if (isset($_SESSION['message'])) {
     <div class="form-group explain">
         <label for="people_email">*Email Address</label>
         <input type="email" name="people_email" id="people_email" class="form-control"
-        value='<?php if (isset($peopleEmail)) { echo $peopleEmail;
+        value='<?php if (isset($people_email)) { echo $people_email;
         } elseif (isset($_SESSION['peopleData']['people_email'])) {
             echo $_SESSION['peopleData']['people_email'];
             } ?>' placeholder="Email Address" required title="Required">
