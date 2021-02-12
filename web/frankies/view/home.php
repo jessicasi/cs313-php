@@ -1,4 +1,4 @@
-<?php include 'common/header.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/frankies/common/header.php'; ?>
 
 <!-- Background image -->
 <div

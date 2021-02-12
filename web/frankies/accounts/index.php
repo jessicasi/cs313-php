@@ -146,7 +146,7 @@ switch ($action) {
         if (count($personalReviews)) {
         $_SESSION['reviewDisplay'] = buildPersonalReviewDisplay($personalReviews);
         } else {
-          $_SESSION['message1'] = "<p class='emptyMessage'>You haven't reviewed anything yet - head to a vehicle detail page to make your first review!</p>";
+          $_SESSION['message1'] = "<p>You haven't reviewed anything yet!</p>";
         }
 
         // Send them to the admin view
