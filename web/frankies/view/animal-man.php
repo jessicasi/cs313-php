@@ -18,10 +18,10 @@
 if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
 }
-if (isset($classificationList)) { 
+if (isset($typeList)) { 
  echo '<h2 class="ctr">Animals By Type</h2>'; 
  echo '<p class="ctr">Choose a type to see those animals</p>'; 
- echo $classificationList; 
+ echo $typeList; 
 }
 ?>
 <noscript>

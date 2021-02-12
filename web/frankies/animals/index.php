@@ -22,6 +22,7 @@ require_once '../model/reviews-model.php';
 
 //Get the list of species
 $classifications = getClassifications();
+$types = getAllTypes();
 
 // Build the nav list
 
@@ -63,16 +64,16 @@ switch ($action) {
             $animalDisplay = buildDetailDisplay($animal);
         }
         $reviews = getReviews($animal['type_id']);
-        if (count($reviews)){
+        if (count($reviews)) {
             $reviewDisplay = buildReviewDisplay($reviews);
         }
 
         include '../view/animal-detail.php';
         break;
 
-    case 'filterData': 
+    case 'filterData':
         $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_STRING);
-       
+
         //check for missing data
         if (empty($type_id)) {
             $_SESSION['message'] = "Choose an animal to filter results by";
@@ -88,7 +89,30 @@ switch ($action) {
 
         break;
 
+    case 'getAnimalTypes':
+        // Get the classificationID 
+        $type_id = filter_input(INPUT_GET, 'type_id', FILTER_SANITIZE_NUMBER_INT);
+        // Fetch the vehicles by classificationID from the DB 
+        $AnimalArray = getFilteredAnimals($type_id);
+        // Convert the array to a JSON object and send it back 
+        echo json_encode($AnimalArray);
+        break;
+
+    case 'mod':
+        $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_VALIDATE_INT);
+        $animalInfo = getAnimalInfo($animal_id);
+        if (count($animalInfo) < 1) {
+            $message = 'Sorry, no animal information could be found.';
+        }
+        if (isset($animal_info['animal_name'])) {
+            $pageTitle = "Modify $animal_info[animal_name])";
+        } 
+        include '../view/animal-update.php';
+        break;
     default:
-        include 'view/home.php';
+
+        $typeList = buildTypeList($types);
+
+        include '../view/animal-man.php';
         break;
 }

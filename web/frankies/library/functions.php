@@ -129,3 +129,16 @@ function getReviewDate($review_date){
  
    return $prv;
   }
+
+
+  // Build the classifications select list 
+function buildTypeList($types)
+{
+   $typeList = '<select id="typeList">';
+   $typeList .= "<option>Choose a Classification</option>";
+   foreach ($types as $type) {
+      $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
+   }
+   $typeList .= '</select>';
+   return $typeList;
+}
