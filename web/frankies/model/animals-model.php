@@ -102,9 +102,10 @@ function getAllTypes(){
 }
 
 function getAnimalInfo($animal_id){
+    echo $animal_id;
     $db = frankiesFarmConnect();
     $sql = 'SELECT a.animal_id, a.animal_type, a.animal_subtype, a.animal_name, a.animal_age, a.animal_notes, a.classification_id, a.type_id, i.img_id, i.img_name, i.img_path, i.img_date, i.animal_id, i.classification_id
-    FROM animal AS a
+    FROM animals AS a
 	INNER JOIN
     images as i
     ON a.animal_id = i.animal_id  WHERE i.animal_id LIKE :animal_id';

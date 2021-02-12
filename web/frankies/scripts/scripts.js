@@ -4,7 +4,6 @@
  let typeList = document.querySelector("#typeList"); 
  typeList.addEventListener("change", function () { 
   let type_id = typeList.value; 
-  console.log(`type id is: ${type_id}`); 
   let classIDURL = "/frankies/animals/index.php?action=getAnimalTypes&type_id=" + type_id; 
   fetch(classIDURL) 
   .then(function (response) { 
@@ -33,6 +32,8 @@ function buildAnimalList(data) {
     // Iterate over all vehicles in the array and put each in a row 
     data.forEach(function (element) { 
      dataTable += `<tr><td>${element.animal_name}</td>`; 
+     console.log(element.animal_id);
+     console.log('sup');
      dataTable += `<td><a href='/frankies/animals?action=mod&id=${element.animal_id}' title='Click to modify'>Modify</a></td>`; 
      dataTable += `<td><a href='/frankies/animals?action=del&id=${element.animal_id}' title='Click to delete'>Delete</a></td></tr>`; 
     }) 
