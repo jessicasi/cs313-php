@@ -2,7 +2,45 @@
 <?php
 if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
     header('Location: /frankies/');
+}?>
+<?php
+
+//Build Classification List
+$classificationList = '<select name="classification_id" required>';
+$classificationList .= '<option value="" disabled selected hidden>Classification</option>';
+foreach ($classifications as $classification){
+    $classificationList .= "<option value='$classification[classification_id]'";
+    if(isset($classification_id)){
+        if($classification['classification_id'] === $classification_id){
+        $classificationList .= ' selected ';
+        }
+    } elseif(isset($animalInfo['classification_id'])){
+        if($classification['classification_id'] === $animalInfo['classification_id']){
+            $classificationList .= ' selected ';
+        }
+    }
+     $classificationList.= ">$classification[classification_type]</option>";
 }
+$classificationList .= '</select>';
+
+//Build Type List
+$typeList = '<select name="type_id" required>';
+$typeList .= '<option value="" disabled selected hidden>Type</option>';
+foreach ($types as $type){
+    $typeList .= "<option value='$type[type_id]'";
+    if(isset($type_id)){
+        if($type['type_id'] === $type_id){
+            $typeList .= ' selected ';
+        }
+    } elseif(isset($animalInfo['type_id'])){
+        if($type['type_id'] === $animalInfo['type_id']){
+            $typeList .= ' selected ';
+        }
+    }
+    $typeList.= ">$type[type_name]</option>";
+}
+$typeList .= '</select>';
+
 ?><h1>Update Animal</h1>
 <?php
 if (isset($_SESSION['message'])) {
