@@ -99,6 +99,7 @@ switch ($action) {
         break;
 
     case 'mod':
+        echo 'test';
         $animal_id = filter_input(INPUT_GET, 'animal_id', FILTER_VALIDATE_INT);
         $animalInfo = getAnimalInfo($animal_id);
         if (count($animalInfo) < 1) {

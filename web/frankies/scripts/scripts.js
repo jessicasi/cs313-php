@@ -33,7 +33,7 @@ function buildAnimalList(data) {
     // Iterate over all vehicles in the array and put each in a row 
     data.forEach(function (element) { 
      dataTable += `<tr><td>${element.animal_name}</td>`; 
-     dataTable += `<td><a href='/frankies/animals=mod&id=${element.animal_id}' title='Click to modify'>Modify</a></td>`; 
+     dataTable += `<td><a href='/frankies/animals?action=mod&id=${element.animal_id}' title='Click to modify'>Modify</a></td>`; 
      dataTable += `<td><a href='/frankies/animals?action=del&id=${element.animal_id}' title='Click to delete'>Delete</a></td></tr>`; 
     }) 
     dataTable += '</tbody>'; 
