@@ -34,8 +34,15 @@ if (isset($_SESSION['reviewDisplay'])){
 
 </section>
 
-
-
+<?php
+if ($_SESSION['clientData']['people_level'] == 1) {
+    echo "<section>";
+    echo "<h2> Animal Management</h2>";
+    echo "<p>Use the below link to manage animals</p>";
+    echo "<p><a href='/frankies/animals/index.php' target='_blank' title='Animals Controller Page'>Animal Management</a></p>";
+    echo "</section>";
+}
+?>
 <?php
 unset($_SESSION['message']);
 ?>
