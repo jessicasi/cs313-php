@@ -229,7 +229,7 @@ function addAnimal($animal_type,$animal_subtype,$animal_name, $animal_age, $anim
     // Insert the data
     $stmt->execute();
     // Ask how many rows changed as a result of our insert
-    $animal_id = $db->lastInsertId('animal_id_seq');
+    $animal_id = $db->lastInsertId("animals_id_seq");
     
     // Close the database interaction
     $stmt->closeCursor();
