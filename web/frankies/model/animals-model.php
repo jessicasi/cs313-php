@@ -130,17 +130,18 @@ function getAnimalInfo($animal_id){
 
 }
 
-function updateAnimal($classification_id,$type_id, $animal_name, $animal_age, $animal_notes, $animal_id){
+function updateAnimal($classification_id,$type_id,  $animal_type, $animal_name, $animal_age, $animal_notes, $animal_id){
     // Create a connection object using the phpmotors connection function
     $db = frankiesFarmConnect();
     // The SQL statement
-    $sql = 'UPDATE animals SET animal_name = :animal_name, animal_age = :animal_age, 
+    $sql = 'UPDATE animals SET animal_type = :animal_type, animal_name = :animal_name, animal_age = :animal_age, 
 	animal_notes = :animal_notes,classification_id = :classification_id, type_id = :type_id WHERE animal_id = :animal_id';
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
     // The next four lines replace the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
+    $stmt->bindValue(':animal_type', $animal_type, PDO::PARAM_STR);
     $stmt->bindValue(':animal_name', $animal_name, PDO::PARAM_STR);
     $stmt->bindValue(':animal_age', $animal_age, PDO::PARAM_INT);
     $stmt->bindValue(':animal_notes', $animal_notes, PDO::PARAM_STR);

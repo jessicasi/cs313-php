@@ -49,7 +49,7 @@ if (isset($_SESSION['message'])) {
 ?>
 
 <p>* All Fields are Required</p>
-<form method="post" action="/frankies/animals/index.php" class="accountForms">
+<form method="post" action="/frankies/animals/index.php" class="accountForms" enctype="multipart/form-data">
 <div class="form-group explain">
 <label>*Classification</label>
         <?php
@@ -88,6 +88,10 @@ if (isset($_SESSION['message'])) {
 <label>*Notes</label>
 <textarea name="animal_notes" id="animal_notes" class="form-control" required title="Required">
 <?php if (isset($animalInfo['animal_notes'])) { echo $animalInfo['animal_notes'];}?></textarea>
+</div>
+<div class="form-group explain">
+<label>*Upload Image</label>
+<input type="file" name="file1">
 </div>
 <div class="form-group explain">
 <input type="hidden" name="action" value="addAnimal">

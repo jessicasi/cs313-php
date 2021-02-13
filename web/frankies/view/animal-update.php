@@ -67,6 +67,12 @@ if (isset($_SESSION['message'])) {
         ?>
 </div>
 <div class="form-group explain">
+<label>*Breed</label>
+<input type="text" name="animal_type" id="animal_type" class="form-control"
+        value='<?php if (isset($animalInfo['animal_type'])) { echo $animalInfo['animal_type'];
+        }?>' required title="Required">
+</div>
+<div class="form-group explain">
 <label>*Name</label>
 <input type="text" name="animal_name" id="animal_name" class="form-control"
         value='<?php if (isset($animalInfo['animal_name'])) { echo $animalInfo['animal_name'];

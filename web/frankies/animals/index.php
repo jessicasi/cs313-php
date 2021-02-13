@@ -18,6 +18,8 @@ require_once '../library/functions.php';
 require_once '../model/accounts-model.php';
 //Get the reviews model
 require_once '../model/reviews-model.php';
+//Get the uploads model
+require_once '../model/uploads-model.php';
 
 
 //Get the list of species
@@ -119,16 +121,18 @@ switch ($action) {
         $classification_id = filter_input(INPUT_POST, 'classification_id', FILTER_SANITIZE_NUMBER_INT);
         $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
         $animal_name = filter_input(INPUT_POST, 'animal_name', FILTER_SANITIZE_STRING);
+        $animal_type = filter_input(INPUT_POST, 'animal_type', FILTER_SANITIZE_STRING);
         $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
         $animal_notes = filter_input(INPUT_POST, 'animal_notes', FILTER_SANITIZE_STRING);
         //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
         //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
         $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
+     
 
         //Filter through array created to find classification ID
 
         // Check for missing data
-        if (empty($animal_name) || empty($animal_age) || empty($animal_notes)) {
+        if (empty($animal_name) || empty($animal_age) || empty($animal_notes || empty( $animal_type))) {
             $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
             $pageTitle = 'Add Vehicle';
             include '../view/animal-update.php';
@@ -151,7 +155,7 @@ switch ($action) {
         //$invImage = '../images/vehicles/no-image.png';
         //$invThumbnail = '../images/vehicles/no-image.png';
 
-        $updateOutcome = updateAnimal($classification_id, $type_id, $animal_name, $animal_age, $animal_notes, $animal_id);
+        $updateOutcome = updateAnimal($classification_id, $type_id,  $animal_type, $animal_name, $animal_age, $animal_notes, $animal_id);
 
         // Check and report the result
         if ($updateOutcome === 1) {
@@ -214,6 +218,31 @@ switch ($action) {
         $animal_age = filter_input(INPUT_POST, 'animal_age', FILTER_SANITIZE_NUMBER_INT);
         $animal_notes = filter_input(INPUT_POST, 'animal_notes', FILTER_SANITIZE_STRING);
         $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
+        $img_name = $_FILES['file1']['name'];
+
+        $imageCheck = checkExistingImage($imgName);
+        if ($imageCheck) {
+            $message = '<p">An image by that name already exists.</p>';
+        } elseif (empty($classification_id) || empty($img_name)) {
+            $message = '<p>You must select an animal and image file for the animal.</p>';
+        } else {
+            // Upload the image, store the returned path to the file
+            $img_path = uploadFile('file1');
+
+            // Insert the image information to the database, get the result
+            $result = storeImages($img_path, $animal_id, $img_name);
+
+            // Set a message based on the insert result
+            if ($result) {
+                $message = '<p class="returnMessage">The upload succeeded.</p>';
+            } else {
+                $message = '<p class="errorMessage">Sorry, the upload failed.</p>';
+            }
+        }
+
+        // Store message to session
+        $_SESSION['message'] = $message;
+
         //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
         //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
         
