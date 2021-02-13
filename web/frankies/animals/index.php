@@ -35,6 +35,14 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+
+/* * ****************************************************
+* Variables for use with the Image Upload Functionality
+* **************************************************** */
+// directory name where uploaded images are stored
+$image_dir = '/frankies/images/animals';
+// The path is the full path from the server root
+$image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 switch ($action) {
 
     case 'classification':
