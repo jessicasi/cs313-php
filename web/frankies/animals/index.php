@@ -228,9 +228,7 @@ switch ($action) {
         $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
         $img_name = $_FILES['file1']['name'];
 
-        // Store message to session
-        $_SESSION['message'] = $message;
-
+       
         //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
         //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
         
