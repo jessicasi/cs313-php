@@ -257,10 +257,10 @@ switch ($action) {
         //$invThumbnail = '../images/vehicles/no-image.png';
 
         $animal_type = getTypeName($type_id);
-        $addOutcome = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
-        $animal_id = $db->lastInsertId('animal_id_seq');
+        $animal_id = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
+
         // Check and report the result
-        if($addOutcome === 1) {
+        if($addOutcome) {
             $imageCheck = checkExistingImage($img_name);
         if ($imageCheck) {
             $message = '<p">An image by that name already exists.</p>';
