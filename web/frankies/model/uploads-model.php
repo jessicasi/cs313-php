@@ -13,16 +13,17 @@ function checkExistingImage($img_name)
 }
 
 // Add image information to the database table
-function storeImages($img_path, $animal_id,$img_name)
+function storeImages($img_path, $animal_id,$img_name, $classification_id)
 {
     $db = frankiesFarmConnect();
     
-    $sql = 'INSERT INTO images (animal_id, img_path, img_name) VALUES (:animal_id, :img_path, :img_name)';
+    $sql = 'INSERT INTO images (animal_id, img_path, img_name, classification_id) VALUES (:animal_id, :img_path, :img_name, :classification_id)';
     $stmt = $db->prepare($sql);
     // Store the full size image information
     $stmt->bindValue(':animal_id', $animal_id, PDO::PARAM_INT);
     $stmt->bindValue(':img_path', $img_path, PDO::PARAM_STR);
     $stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
+    $stmt->bindValue(':classification_id', $classification_id, PDO::PARAM_INT);
     $stmt->execute();
 
     $rowsChanged = $stmt->rowCount();

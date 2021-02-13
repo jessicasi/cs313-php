@@ -260,7 +260,7 @@ switch ($action) {
         $animal_id = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
 
         // Check and report the result
-        if($addOutcome) {
+        if($animal_id) {
             $imageCheck = checkExistingImage($img_name);
         if ($imageCheck) {
             $message = '<p">An image by that name already exists.</p>';
@@ -271,7 +271,7 @@ switch ($action) {
             $img_path = uploadFile('file1');
 
             // Insert the image information to the database, get the result
-            $result = storeImages($img_path, $animal_id,$img_name);
+            $result = storeImages($img_path, $animal_id,$img_name, $classification_id);
 
             // Set a message based on the insert result
             if ($result) {
