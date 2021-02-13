@@ -220,7 +220,7 @@ switch ($action) {
         $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
         $img_name = $_FILES['file1']['name'];
 
-        $imageCheck = checkExistingImage($imgName);
+        $imageCheck = checkExistingImage($img_name);
         if ($imageCheck) {
             $message = '<p">An image by that name already exists.</p>';
         } elseif (empty($classification_id) || empty($img_name)) {
