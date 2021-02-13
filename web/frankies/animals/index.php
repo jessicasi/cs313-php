@@ -242,7 +242,7 @@ switch ($action) {
         //$invThumbnail = '../images/vehicles/no-image.png';
 
         $animal_type = getTypeName($type_id);
-        $addOutcome = addAnimal($animal_type,$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
+        $addOutcome = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
         // Check and report the result
         if($addOutcome === 1) {
             $_SESSION['message'] = "<p'>Congratulations your Animal was added successfully to the database .</p>";
