@@ -224,11 +224,13 @@ function addAnimal($animal_type,$animal_subtype,$animal_name, $animal_age, $anim
     $stmt->bindValue(':animal_notes', $animal_notes, PDO::PARAM_STR);
     $stmt->bindValue(':classification_id', $classification_id, PDO::PARAM_INT);
     $stmt->bindValue(':type_id', $type_id, PDO::PARAM_INT);
+    
 
     // Insert the data
     $stmt->execute();
     // Ask how many rows changed as a result of our insert
     $rowsChanged = $stmt->rowCount();
+    
     // Close the database interaction
     $stmt->closeCursor();
     // Return the indication of success (rows changed)

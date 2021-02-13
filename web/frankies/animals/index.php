@@ -228,26 +228,6 @@ switch ($action) {
         $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
         $img_name = $_FILES['file1']['name'];
 
-        $imageCheck = checkExistingImage($img_name);
-        if ($imageCheck) {
-            $message = '<p">An image by that name already exists.</p>';
-        } elseif (empty($classification_id) || empty($img_name)) {
-            $message = '<p>You must select an animal and image file for the animal.</p>';
-        } else {
-            // Upload the image, store the returned path to the file
-            $img_path = uploadFile('file1');
-
-            // Insert the image information to the database, get the result
-            $result = storeImages($img_path, $animal_id, $img_name);
-
-            // Set a message based on the insert result
-            if ($result) {
-                $message = '<p class="returnMessage">The upload succeeded.</p>';
-            } else {
-                $message = '<p class="errorMessage">Sorry, the upload failed.</p>';
-            }
-        }
-
         // Store message to session
         $_SESSION['message'] = $message;
 
@@ -282,6 +262,25 @@ switch ($action) {
         $addOutcome = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
         // Check and report the result
         if($addOutcome === 1) {
+            $imageCheck = checkExistingImage($img_name);
+        if ($imageCheck) {
+            $message = '<p">An image by that name already exists.</p>';
+        } elseif (empty($classification_id) || empty($img_name)) {
+            $message = '<p>You must select an animal and image file for the animal.</p>';
+        } else {
+            // Upload the image, store the returned path to the file
+            $img_path = uploadFile('file1');
+
+            // Insert the image information to the database, get the result
+            $result = storeImages($img_path, $img_name);
+
+            // Set a message based on the insert result
+            if ($result) {
+                $message = '<p class="returnMessage">The upload succeeded.</p>';
+            } else {
+                $message = '<p class="errorMessage">Sorry, the upload failed.</p>';
+            }
+        }
             $_SESSION['message'] = "<p'>Congratulations your Animal was added successfully to the database .</p>";
             include '../view/add-animal.php';
             unset($_SESSION['message']);
