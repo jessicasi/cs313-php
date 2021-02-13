@@ -13,10 +13,10 @@ function checkExistingImage($img_name)
 }
 
 // Add image information to the database table
-function storeImages($img_path, $img_name)
+function storeImages($img_path, $animal_id,$img_name)
 {
     $db = frankiesFarmConnect();
-    $animal_id = $db->lastInsertId('animal_id_seq');
+    
     $sql = 'INSERT INTO images (animal_id, img_path, img_name) VALUES (:animal_id, :img_path, :img_name)';
     $stmt = $db->prepare($sql);
     // Store the full size image information

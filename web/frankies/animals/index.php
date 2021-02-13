@@ -228,7 +228,7 @@ switch ($action) {
         $animal_subtype = filter_input(INPUT_POST, 'animal_subtype', FILTER_SANITIZE_STRING);
         $img_name = $_FILES['file1']['name'];
 
-       
+        
         //$invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
         //$invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
         
@@ -258,6 +258,7 @@ switch ($action) {
 
         $animal_type = getTypeName($type_id);
         $addOutcome = addAnimal($animal_type['type_name'],$animal_subtype,$animal_name, $animal_age, $animal_notes, $type_id, $classification_id );
+        $animal_id = $db->lastInsertId('animal_id_seq');
         // Check and report the result
         if($addOutcome === 1) {
             $imageCheck = checkExistingImage($img_name);
@@ -270,7 +271,7 @@ switch ($action) {
             $img_path = uploadFile('file1');
 
             // Insert the image information to the database, get the result
-            $result = storeImages($img_path, $img_name);
+            $result = storeImages($img_path, $animal_id,$img_name);
 
             // Set a message based on the insert result
             if ($result) {
