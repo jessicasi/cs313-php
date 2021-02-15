@@ -36,11 +36,12 @@ switch ($action) {
     case 'newReview':
         //Add Review
         //Filter and store the data
+
         $review_text = filter_input(INPUT_POST, 'review_text', FILTER_SANITIZE_STRING);
         $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_SANITIZE_NUMBER_INT);
-        $type_id = filter_input(INPUT_GET, 'type_id', FILTER_SANITIZE_NUMBER_INT);
+        $type_id = filter_input(INPUT_POST, 'type_id', FILTER_SANITIZE_NUMBER_INT);
         $people_id = filter_input(INPUT_POST, 'people_id', FILTER_SANITIZE_NUMBER_INT);
-
+       
         //Check for missing data
         if (empty($review_text)) {
             $_SESSION['message'] = '<p class="errorMessage">Please provide information for all form fields.</p>';

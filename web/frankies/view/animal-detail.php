@@ -33,7 +33,7 @@ if (!isset($_SESSION['loggedin'])) {
     echo '<input type="hidden" name="animal_id" value=';
     echo $animal['animal_id'];
     echo '>';
-    echo '<input type="hidden" name="[people_id" value=';
+    echo '<input type="hidden" name="people_id" value=';
     echo $_SESSION['clientData']['people_id'];
     echo '>';
     echo '<input type="hidden" name="action" value="newReview">';
