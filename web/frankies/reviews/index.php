@@ -53,11 +53,11 @@ switch ($action) {
 
         //Check and report the result
         if ($reviewOutcome === 1) {
-            header("Location: /frankies/animals?action=information&invId=$animal_id");
+            header("Location: /frankies/animals?action=information&animal_id=$animal_id");
             exit;
         } else {
             $_SESSION['message'] = '<p class="errorMessage">Sorry, but the review adding failed. Please try again.</p>';
-            header("Location: /phpmotors/vehicles?action=information&invId=$animal_id");
+            header("Location: /frankies/animals?action=information&animal_id=$animal_id");
             exit;
         }
         break;
