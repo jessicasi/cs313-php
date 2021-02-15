@@ -134,10 +134,12 @@ switch ($action) {
     case 'deleteReview':
         $review_id = filter_input(INPUT_POST, 'review_id', FILTER_SANITIZE_NUMBER_INT);
         $deleteOutcome = deleteReview($review_id);
+
+
         // Check and report the result
         if ($deleteOutcome === 1) {
             $_SESSION['message'] = "<p >Congratulations your review was successfully deleted from the database .</p>";
-            header("Location: /frankies/accounts?action=admin");
+            include '../animals?action=admin"';
             exit;
         } else {
             $_SESSION['message'] = '<p >Error: your review was not deleted.</p>';
