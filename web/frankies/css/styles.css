@@ -197,6 +197,14 @@ li .detailLink:hover{
     padding: 0;
 }
 
+.animal-detail-display{
+    width: 90%;
+    border: 1px #D99152 solid;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+}
+
 /**Footer**/
 
 footer {

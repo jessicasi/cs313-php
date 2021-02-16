@@ -4,10 +4,12 @@
     echo $_SESSION['message'];
 }
 ?>
+<div class="animal-detail-display">
 <?php if (isset($animalDisplay)) {
     echo $animalDisplay;
 } ?>
 
+<hr>
 <h2>Customer Reviews</h2>
 <?php
 if (!isset($_SESSION['loggedin'])) {
@@ -26,7 +28,7 @@ if (!isset($_SESSION['loggedin'])) {
     echo '</div><div class="form-group explain">';
     echo '<label for="review_text">Review</label>';
     echo '<textarea  class="form-control" name="review_text" required></textarea>';
-    echo' </div>';
+    echo ' </div>';
     echo '<input type="hidden" name="type_id" value=';
     echo $animal['type_id'];
     echo '>';
@@ -47,5 +49,6 @@ if (isset($reviewDisplay)) {
 };
 unset($_SESSION['message']);
 ?>
+</div>
 
 <?php include '../common/footer.php' ?>
