@@ -175,8 +175,8 @@ li .detailLink:hover{
     text-align: center;
 }
 
-.admin-page h2 {
-    margin-top: m10px;
+.admin-page h2, .account-page h2 {
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -197,13 +197,18 @@ li .detailLink:hover{
     padding: 0;
 }
 
-.animal-detail-display{
+.animal-detail-display, .account-page{
     width: 90%;
     border: 1px #D99152 solid;
     padding: 10px;
     margin: auto;
     margin-top: 10px;
 }
+
+.classificationHeadings{
+    margin-top: 10px;
+}
+
 
 /**Footer**/
 
