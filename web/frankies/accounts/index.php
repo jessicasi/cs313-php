@@ -253,7 +253,8 @@ switch ($action) {
 
                 case 'deliverAdminView':
                     $pageTitle = 'My Account';
-        include '../view/admin.php';
+                    $personalReviews = getPersonalReviews($_SESSION['clientData']['people_id']);
+                    include '../view/admin.php';
                     break;
 
     default:
