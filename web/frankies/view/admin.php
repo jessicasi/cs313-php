@@ -9,6 +9,7 @@
     echo $_SESSION['message'];
 } ?>
 
+<div class="admin-page">
 <ul>
     <li>Name: <?php echo $_SESSION['clientData']['people_fname'] ." ". $_SESSION['clientData']['people_lname'] ?></li>
     <li>Email Address: <?php echo $_SESSION['clientData']['people_email'] ?></li>
@@ -19,13 +20,14 @@
     <p>Use the below link to update your account information:</p>
     <a href='/frankies/accounts/index.php?action=mod' title="Update Account" class = "updateLink">Update Account Information</a>
 </section>
-
+<hr>
 <section class="manageReviews">
 <h2 class="accountHeadings">Manage Your Product Reviews</h2><?php
 if (isset($_SESSION['message1'])) {
     echo $_SESSION['message1'];
 }
 ?>
+
 <?php
 if (isset($_SESSION['reviewDisplay'])){
     echo $_SESSION['reviewDisplay'];
@@ -33,7 +35,7 @@ if (isset($_SESSION['reviewDisplay'])){
 ?>
 
 </section>
-
+<hr>
 <?php
 if ($_SESSION['clientData']['people_level'] == 1) {
     echo "<section>";
@@ -43,6 +45,7 @@ if ($_SESSION['clientData']['people_level'] == 1) {
     echo "</section>";
 }
 ?>
+</div>
 <?php
 unset($_SESSION['message']);
 ?>

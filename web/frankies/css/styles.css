@@ -166,6 +166,37 @@ li .detailLink:hover{
     color: #99A66A;
 }
 
+.admin-page{
+    width: 95%;
+    margin-top: 15px;
+    border: 1px #024959 solid;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin-page h2 {
+    margin-top: m10px;
+    text-align: center;
+}
+
+.admin-page ul {
+    list-style-type:none;
+}
+
+#animal-intro{
+    text-align: center;
+    border: #D99152 1px solid;
+    margin: 10px;
+    padding:5px;
+    color: #024959;
+}
+
+#animal-display{
+    text-align: center;
+    padding: 0;
+}
+
 /**Footer**/
 
 footer {
