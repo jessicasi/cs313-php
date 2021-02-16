@@ -18,8 +18,33 @@ body {
     min-width: 360px;
 }
 
+img.homeimg{
+    margin: 20px;
+    padding: 10px;
+    width: 85%;
+    border: 5px #D99152 solid;
+}
+
+#intro{
+    padding: 10px;
+    border: 3px #99A66A solid;
+    margin: 10px;
+}
+
 h1{
     text-align: center;
+}
+
+.icon-pic{
+    width: 20%;
+
+}
+
+#icon-div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 /** Home Page**/
 
@@ -38,9 +63,13 @@ h1{
     width: 50px;
 }
 
-.accountLink{
+.accountLink, .navLink{
     text-decoration: none;
     color: white;
+}
+
+.navLink:hover{
+    color: #D99152;
 }
 
 li .accountLink:hover {
