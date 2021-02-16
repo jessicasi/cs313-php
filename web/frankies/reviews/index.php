@@ -139,7 +139,7 @@ switch ($action) {
         // Check and report the result
         if ($deleteOutcome === 1) {
             $_SESSION['message'] = "<p >Congratulations your review was successfully deleted from the database .</p>";
-            include '../accounts?action=deliverAdminView"';
+            include '../accounts?action=deliverAdminView';
             exit;
         } else {
             $_SESSION['message'] = '<p >Error: your review was not deleted.</p>';
