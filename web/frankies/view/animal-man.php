@@ -9,9 +9,10 @@
         header('Location: /frankies/');
     }
     ?><h1>Animal Administrative</h1>
-<ul>
-    <li> <a href='/frankies/animals/index.php?action=deliverAnimalTypeView'>Add Animal Type </a></li>
-    <li> <a href='/frankies/animals/index.php?action=deliverAnimalView'>Add Animal </a></li>
+    <div class="animal-man-page">
+<ul class="animal-man-list">
+    <li> <a href='/frankies/animals/index.php?action=deliverAnimalTypeView' class="animal-man-link">Add Animal Type </a></li>
+    <li> <a href='/frankies/animals/index.php?action=deliverAnimalView'class="animal-man-link">Add Animal </a></li>
 </ul>
 
 <?php
@@ -24,6 +25,7 @@ if (isset($typeList)) {
  echo $typeList; 
 }
 ?>
+    </div>
 <noscript>
 <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
 </noscript>

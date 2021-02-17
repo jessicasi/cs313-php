@@ -83,6 +83,10 @@ a.updateLink, a.review-link{
     text-decoration: none;
 }
 
+.register-new{
+    margin-top: 25px;
+}
+
 a.accountLink:hover {
     color: #99A66A;
 }
@@ -92,7 +96,27 @@ a.accountLink:hover {
     font-size: 1.2rem;
 }
 
+.animal-man-page{
+    width: 85%;
+    margin: auto;
+    border: 1px #99A66A solid;
+    padding: 10px;
+}
 
+.animal-man-list{
+    list-style: none;
+}
+
+a.animal-man-link{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #D99152
+}
+
+a.animal-man-link:hover{
+    font-size: 1.3rem;
+    color: #024959;
+}
 a.review-link:hover{
     color: #99A66A;
     font-weight:bold;   
