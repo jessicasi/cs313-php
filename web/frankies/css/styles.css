@@ -75,7 +75,7 @@ h1{
 }
 
 a.nav-link:hover, a.updateLink:hover{
-    color: #D99152;
+    color: #D99152!important;
     font-size: 1.2rem;
 }
 a.updateLink, a.review-link{
@@ -259,11 +259,6 @@ footer {
         margin: 10px;
     }
 
-    nav{
-        display:grid;
-        grid-template-columns: (1fr 3fr 1fr 1fr 1fr 1fr);
-    }
-
     h3{
         font-size: 1.2rem;
         color: #99A66A;
@@ -288,6 +283,26 @@ footer {
         width: 10%;
         margin-top: 10rem;
     
+    }
+
+    a.nav-link{
+        font-size: 1.2rem;
+        color: white!important;
+        margin-left: 55px;
+    }
+
+    a.nav-link:hover{
+        font-size:1.5rem;
+    }
+
+    .accountLink{
+        width: 40%;
+        margin-left: 55px;
+        font-size: 1.2rem;
+    }
+
+    a.accountLink:hover{
+        font-size: 1.5rem;
     }
 
     #intro{
