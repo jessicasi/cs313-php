@@ -87,7 +87,7 @@ function buildReviewDisplay($reviews){
       $rv .= "<p class='reviewName'>";
       $rv .= getScreenName($review['people_fname'], $review['people_lname']);
       $rv .= " wrote on ";
-      $rv .= date("j F, Y", strtotime($review['review_date']));
+      $rv .= date("F j, Y", strtotime($review['review_date']));
       $rv .="</p><p class='reviewInfo'>$review[review_text]";
    }
    $rv .=' </div>';
@@ -97,7 +97,7 @@ function buildReviewDisplay($reviews){
 
 //Get Review Date
 function getReviewDate($review_date){
-   $review_date = date("j F, Y", strtotime(($review_date)));
+   $review_date = date("F j, Y", strtotime(($review_date)));
    return $review_date;
   }
   
@@ -108,7 +108,7 @@ function getReviewDate($review_date){
 
       $prv .= "<li> $pr[type_namw]";
       $prv .= "(Reviewed on ";
-      $prv .= date("j F, Y", strtotime($pr['review_date']));
+      $prv .= date("F j, Y", strtotime($pr['review_date']));
       $prv .= ")";
       $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title='Deliver Edit Review' class='review-link'> Edit </a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View' class='review-link'> Delete </a></li>";
    }

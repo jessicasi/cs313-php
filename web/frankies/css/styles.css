@@ -91,6 +91,10 @@ a.accountLink:hover {
     color: #99A66A;
 }
 
+.animal-man-heading{
+    margin-top: 10px;
+}
+
 .account-info{
     font-weight: bold;
     font-size: 1.2rem;
@@ -106,8 +110,15 @@ a.accountLink:hover {
     margin-bottom: 25px;
 }
 
+table{
+border-collapse: separate;
+  border-spacing: 10px 5px;
+}
+
 .animal-man-list{
     list-style: none;
+    margin-left: 0;
+    padding-left: 5px;
 }
 
 a.animal-man-link{
@@ -145,6 +156,11 @@ a.detailLink:hover{
     width: 95%;
     border: 1.2px #D99152 solid;
     margin: auto;
+    padding: 10px;
+}
+
+.review-info p{
+    text-align: center;
 }
 
 .formLeft {

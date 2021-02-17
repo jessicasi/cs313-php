@@ -33,6 +33,7 @@ function buildAnimalList(data) {
     data.forEach(function (element) { 
      dataTable += `<tr><td>${element.animal_name}</td>`; 
      dataTable += `<td><a href='/frankies/animals?action=mod&id=${element.animal_id}' title='Click to modify'>Modify</a></td>`; 
+     dataTable += `<td>|</td>`; 
      dataTable += `<td><a href='/frankies/animals?action=del&id=${element.animal_id}' title='Click to delete'>Delete</a></td></tr>`; 
     }) 
     dataTable += '</tbody>'; 
