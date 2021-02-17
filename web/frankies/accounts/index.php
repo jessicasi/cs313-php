@@ -254,6 +254,12 @@ switch ($action) {
                 case 'deliverAdminView':
                     $pageTitle = 'My Account';
                     $personalReviews = getPersonalReviews($_SESSION['clientData']['people_id']);
+                    if(count($personalReviews)){
+                        $_SESSION['reviewDisplay'] = buildPersonalReviewDisplay($personalReviews);
+                    } else {
+                        $_SESSION['reviewDisplay'] = "";
+                        $_SESSION['message1'] = "<p>You haven't reviewed anything yet - head to a vehicle detail page to make your first review!</p>";
+                    }
                     include '../view/admin.php';
                     break;
 
