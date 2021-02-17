@@ -2,7 +2,7 @@
 
 <?php if (!$_SESSION['loggedin']) {
     header('Location: /frankies');
-} ?><h1>Welcome <?php echo $_SESSION['clientData']['people_fname'] ?></h1>
+} ?><h1 class="classificationHeadings">Welcome <?php echo $_SESSION['clientData']['people_fname'] ?></h1>
 
 
 <?php if (isset($_SESSION['message'])) {

@@ -4,19 +4,19 @@
 function getNavList($classifications)
 {
    $navList = '<div class="collapse navbar-collapse navigation" id="navbarSupportedContent">';
-   $navList .= '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
+   $navList .= '<ul class="navbar-nav mr-auto mt-2 mt-lg-0">';
    $navList .= "<li class='nav-item'><a  class='nav-link' href='/frankies' title='Frankie\'s Farm Home Page'>Home</a></li>";
    foreach ($classifications as $classification) {
-      $navList .= "<li class='nav-item'><a class='nav-link' href='/frankies/animals?action=classification&classification_type="
+      $navList .= "<li class='nav-item nitem'><a class='nav-link' href='/frankies/animals?action=classification&classification_type="
          . urlencode($classification['classification_type']) .
          "' title='View our $classification[classification_type]'>$classification[classification_type]</a></li>";
    }
    if (isset($_SESSION['loggedin'])) {
 
-      $navList .= '<li class="nav-item"><a class="nav-link" href="/frankies/accounts/index.php?action=Logout" title="Logout">Log Out</a></li>';
+      $navList .= '<li class="nav-item nitem"><a class="nav-link" href="/frankies/accounts/index.php?action=Logout" title="Logout">Log Out</a></li>';
   
   } else {
-   $navList .= ' <li class="nav-item"><a href="/frankies/accounts/index.php?action=deliverLoginView" class="nav-link" title="Login or Register">Log In</a></li>';
+   $navList .= ' <li class="nav-item nitem"><a href="/frankies/accounts/index.php?action=deliverLoginView" class="nav-link" title="Login or Register">Log In</a></li>';
   }
    $navList .= '</ul></div>';
    return $navList;

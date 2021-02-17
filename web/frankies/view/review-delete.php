@@ -7,7 +7,7 @@ if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
 }
 ?>
-
+<div class="review-info">
 <p> Reviewed On <?php if(isset($_SESSION['reviewInfo']['review_date'])){echo $_SESSION['reviewInfo']['review_date'];}?></p>
 
 <small class="form-text text-muted">** Deleting a review is permenant, and cannot be undone **</small>
@@ -23,5 +23,5 @@ if (isset($_SESSION['message'])) {
 <input type="submit" name="submit" value="Delete Review" title="Delete Review">
 </div>
 </form>
-
+</div>
 <?php include '../common/footer.php'?>
