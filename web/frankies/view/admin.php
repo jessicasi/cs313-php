@@ -11,14 +11,13 @@
 
 <div class="admin-page">
 <ul>
-    <li>Name: <?php echo $_SESSION['clientData']['people_fname'] ." ". $_SESSION['clientData']['people_lname'] ?></li>
-    <li>Email Address: <?php echo $_SESSION['clientData']['people_email'] ?></li>
+    <li><span class="account-info">Name: </span> <?php echo $_SESSION['clientData']['people_fname'] ." ". $_SESSION['clientData']['people_lname'] ?></li>
+    <li><span class="account-info">Email Address:</span> <?php echo $_SESSION['clientData']['people_email'] ?></li>
 </ul>
 <hr>
 <section>
     <h2>Account Management</h2>
-    <p>Use the below link to update your account information:</p>
-    <a href='/frankies/accounts/index.php?action=mod' title="Update Account" class = "updateLink">Update Account Information</a>
+    <a href='/frankies/accounts/index.php?action=mod' title="Update Account" class = "updateLink btn">Click to update account information</a>
 </section>
 <hr>
 <section class="manageReviews">
@@ -40,8 +39,7 @@ if (isset($_SESSION['reviewDisplay'])){
 if ($_SESSION['clientData']['people_level'] == 1) {
     echo "<section>";
     echo "<h2> Animal Management</h2>";
-    echo "<p>Use the below link to manage animals</p>";
-    echo "<p><a href='/frankies/animals/index.php' title='Animals Controller Page'>Animal Management</a></p>";
+    echo "<p><a href='/frankies/animals/index.php' title='Animals Controller Page' class = 'updateLink'>Click to manage animal infomrmation</a></p>";
     echo "</section>";
 }
 ?>

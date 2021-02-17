@@ -17,17 +17,17 @@
             </div>
             <div class="col formLeft">
                 <input type="hidden" name="action" value="filterData">
-                <input type="submit" name="submit" value="Filter">
+                <input id="sort-submit" type="submit" name="submit" value="Filter">
             </div>
         </div>
     </form>
 </div>
-
+    <div class="animal-page">
 <p id="animal-intro">Click on an animal to see more information about it</p>
 <?php if (isset($animalDisplay)) {
     echo $animalDisplay;
 }
 ?>
-
+</div>
 
 <?php include '../common/footer.php' ?>

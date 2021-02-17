@@ -123,7 +123,7 @@ function getReviewDate($review_date){
       $prv .= "(Reviewed on ";
       $prv .= date("j F, Y", strtotime($pr['review_date']));
       $prv .= ")";
-      $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title=' Deliver Edit Review' > Edit </a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View'> Delete </a></li>";
+      $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title='Deliver Edit Review' class='review-link'>Edit</a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View' class='review-link'> Delete </a></li>";
    }
    $prv .='</ul>';
  

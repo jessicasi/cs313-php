@@ -18,6 +18,13 @@ body {
     min-width: 360px;
 }
 
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+}
+
 img.homeimg{
     margin: 20px;
     padding: 10px;
@@ -63,7 +70,7 @@ h1{
     width: 50px;
 }
 
-.accountLink, .nav-link{
+.accountLink, .nav-item{
     text-decoration: none;
     color: white;
 }
@@ -72,22 +79,34 @@ h1{
     text-align: center;
 }
 
-li .nav-link:hover{
+a.nav-item:hover, a.updateLink:hover{
     color: #D99152;
+    font-size: 1.2rem;
+}
+a.updateLink, a.review-link{
+    color: #024959;
+    text-decoration: none;
 }
 
-li .accountLink:hover {
+a.accountLink:hover {
     color: #99A66A;
 }
 
-.updateLink{
-    text-decoration: none;
-    color:#D99152;
+.account-info{
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-li .detailLink:hover{
+
+a.review-link:hover{
+    color: #99A66A;
+    font-weight:bold;   
+}
+
+
+a.detailLink:hover{
     color: #024959;
-    font-size: .2rem;
+    font-size: 1.2rem;
 }
 /**Animal Images**/
 .displayImg {
@@ -95,12 +114,11 @@ li .detailLink:hover{
 }
 
 /**Forms**/
-input{
-    margin-top: 10px;
-}
+
 .formRight{
     text-align: right;
 }
+
 
 .formLeft {
     text-align: left;
@@ -167,6 +185,10 @@ li .detailLink:hover{
     width: 90%;
     margin: auto;
 }
+#sort-submit{
+    width: 100px;
+    margin-top: 0;
+}
 
 #welcome:hover{
     color: #99A66A;
@@ -226,5 +248,33 @@ footer {
 }
 
 @media (min-width: 750px){
-    
+    #animal-display {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    #animal-display li {
+        margin: 10px;
+    }
+
+    h3{
+        font-size: 1.2rem;
+        color: #99A66A;
+    }
+
+    #animal-intro{
+        font-size: 1.3rem;
+    }
+
+    .animal-page{
+        width: 95%;
+    }
+
+    nav ul {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+
 }
