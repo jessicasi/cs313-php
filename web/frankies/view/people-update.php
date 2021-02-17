@@ -25,7 +25,7 @@ if (isset($_SESSION['message1'])) {
 
         <div class="form-group  explain">
 
-            <label for="people_email">*Email Address</label>
+            <label for="people_email">*Email</label>
             <input type="email" name="people_email" id="people_email" 
             value='<?php if (isset($peopleEmail)) {echo $peopleEmail;
             } elseif (isset($_SESSION['peopleData']['people_email'])) {

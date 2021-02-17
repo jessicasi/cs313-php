@@ -3,7 +3,7 @@
 //Build the navigation bar
 function getNavList($classifications)
 {
-   $navList = '<div class="collapse navbar-collapse navigagtion" id="navbarSupportedContent">';
+   $navList = '<div class="collapse navbar-collapse navigation" id="navbarSupportedContent">';
    $navList .= '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
    $navList .= "<li class='nav-item'><a  class='nav-link' href='/frankies' title='Frankie\'s Farm Home Page'>Home</a></li>";
    foreach ($classifications as $classification) {
@@ -13,10 +13,10 @@ function getNavList($classifications)
    }
    if (isset($_SESSION['loggedin'])) {
 
-      $navList .= ' <a href="/frankies/accounts/index.php?action=Logout" class="navLink" title="Logout">Log Out</a>';
+      $navList .= '<li class="nav-item"><a class="nav-link" href="/frankies/accounts/index.php?action=Logout" title="Logout">Log Out</a></li>';
   
   } else {
-   $navList .= ' <a href="/frankies/accounts/index.php?action=deliverLoginView" class="navLink" title="Login or Register">Log In</a>';
+   $navList .= ' <li class="nav-item"><a href="/frankies/accounts/index.php?action=deliverLoginView" class="nav-link" title="Login or Register">Log In</a></li>';
   }
    $navList .= '</ul></div>';
    return $navList;
