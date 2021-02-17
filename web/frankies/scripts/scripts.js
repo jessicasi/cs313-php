@@ -24,11 +24,11 @@
 function buildAnimalList(data) { 
     let animalDisplay = document.getElementById("animalDisplay"); 
     // Set up the table labels 
-    let dataTable = '<thead>'; 
-    dataTable += '<tr><th>Animal</th><td>&nbsp;</td><td>&nbsp;</td></tr>'; 
-    dataTable += '</thead>'; 
+    //let dataTable = '<thead>'; 
+    //dataTable += '<tr><th></th><td>&nbsp;</td><td>&nbsp;</td></tr>'; 
+   // dataTable += '</thead>'; 
     // Set up the table body 
-    dataTable += '<tbody>'; 
+    let dataTable = '<tbody>'; 
     // Iterate over all vehicles in the array and put each in a row 
     data.forEach(function (element) { 
      dataTable += `<tr><td>${element.animal_name}</td>`; 

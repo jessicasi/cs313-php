@@ -122,7 +122,7 @@ function getReviewDate($review_date){
 function buildTypeList($types)
 {
    $typeList = '<select id="typeList">';
-   $typeList .= "<option>Choose a Classification</option>";
+   $typeList .= "<option>Choose</option>";
    foreach ($types as $type) {
       $typeList .= "<option value='$type[type_id]'>$type[type_name]</option>";
    }

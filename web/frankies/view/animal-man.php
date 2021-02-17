@@ -25,7 +25,7 @@ if (isset($typeList)) {
  echo $typeList; 
 }
 ?>
-    </div>
+    
 <noscript>
 <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
 </noscript>
@@ -33,6 +33,6 @@ if (isset($typeList)) {
 
 <script src="../scripts/scripts.js"></script>
 
-
+</div>
 
 <?php include '../common/footer.php' ?>

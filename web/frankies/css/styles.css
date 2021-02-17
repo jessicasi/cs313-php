@@ -102,6 +102,9 @@ a.accountLink:hover {
     border: 1px #99A66A solid;
     padding: 10px;
 }
+#typeList{
+    margin-bottom: 25px;
+}
 
 .animal-man-list{
     list-style: none;
