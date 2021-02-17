@@ -34,6 +34,8 @@ if (isset($_SESSION['message'])) {
     </div>
 </form>
 
-
+<?php
+unset($_SESSION['message']);
+?>
 
 <?php include '../common/footer.php' ?>
