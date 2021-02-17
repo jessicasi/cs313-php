@@ -94,19 +94,6 @@ function buildReviewDisplay($reviews){
    return $rv;
 }
 
-function getReviewInfo($review_id){
-   $db = frankiesFarmConnect();
-   $sql = 'SELECT r.review_text, r.review_date, r.type_id, a.type_id
-   FROM reviews r, animals a
-   WHERE review_id = :review_id
-   AND a.type_id = a.type_id';
-   $stmt = $db->prepare($sql);
-   $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
-   $stmt->execute();
-   $reviewInfo = $stmt->fetch(PDO::FETCH_ASSOC);
-   $stmt->closeCursor();
-   return $reviewInfo;
-}
 
 //Get Review Date
 function getReviewDate($review_date){
@@ -123,7 +110,7 @@ function getReviewDate($review_date){
       $prv .= "(Reviewed on ";
       $prv .= date("j F, Y", strtotime($pr['review_date']));
       $prv .= ")";
-      $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title='Deliver Edit Review' class='review-link'>Edit</a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View' class='review-link'> Delete </a></li>";
+      $prv .= "<a href='/frankies/reviews/index.php?action=deliverEditView&review_id=$pr[review_id]' title='Deliver Edit Review' class='review-link'> Edit </a> | <a href='/frankies/reviews/index.php?action=deliverDeleteView&review_id=$pr[review_id]' title='Deliver Delete View' class='review-link'> Delete </a></li>";
    }
    $prv .='</ul>';
  

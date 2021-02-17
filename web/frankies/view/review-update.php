@@ -7,7 +7,7 @@ if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
 }
 ?>
-
+<div class="review-info">
 <p> Reviewed On <?php if(isset($_SESSION['reviewInfo']['review_date'])){echo $_SESSION['reviewInfo']['review_date'];}?></p>
 <hr>
 <form method="post" action="/frankies/reviews/index.php" class="accountForms">
@@ -22,5 +22,5 @@ if (isset($_SESSION['message'])) {
 </div>
 </form>
 
-
+</div>
 <?php include '../common/footer.php'?>

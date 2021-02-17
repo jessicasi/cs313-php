@@ -26,6 +26,20 @@
 
     }
 
+    function getReviewInfo($review_id){
+        $db = frankiesFarmConnect();
+        $sql = 'SELECT r.review_text, r.review_date, r.type_id, a.type_id
+        FROM reviews r, animals a
+        WHERE review_id = :review_id
+        AND a.type_id = a.type_id';
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':review_id', $review_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $reviewInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $reviewInfo;
+     }
+
     function getReviews($type_id){
         $db = frankiesFarmConnect();
         $stmt = $db->prepare('SELECT r.review_id, r.review_text, r.review_date, r.type_id, r.people_id, p.people_fname, p.people_lname FROM reviews r, people p WHERE type_id = :type_id AND p.people_id = r.people_id ORDER BY r.review_date DESC');

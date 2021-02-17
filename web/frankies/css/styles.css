@@ -25,6 +25,16 @@ nav ul {
     flex-flow: column wrap;
 }
 
+nav a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    border-top: 1px solid #bababa;
+    border-bottom: 1px solid #a6cbeb;
+    color: white;
+}
+
 img.homeimg{
     margin: 20px;
     padding: 10px;
@@ -79,12 +89,12 @@ h1{
     text-align: center;
 }
 
-a.nav-item:hover, a.updateLink:hover{
+a.nav-link:hover, a.updateLink:hover{
     color: #D99152;
     font-size: 1.2rem;
 }
 a.updateLink, a.review-link{
-    color: #024959;
+    color: #D99152;
     text-decoration: none;
 }
 
@@ -119,6 +129,11 @@ a.detailLink:hover{
     text-align: right;
 }
 
+.review-info{
+    width: 95%;
+    border: 1.2px #D99152 solid;
+    margin: auto;
+}
 
 .formLeft {
     text-align: left;
@@ -259,6 +274,16 @@ footer {
         margin: 10px;
     }
 
+    nav ul {
+        padding-left: 0;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+    }
+    nav a {
+        padding: 1em;
+        border: none;
+    }
+
     h3{
         font-size: 1.2rem;
         color: #99A66A;
@@ -272,9 +297,6 @@ footer {
         width: 95%;
     }
 
-    nav ul {
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-    }
+
 
 }
