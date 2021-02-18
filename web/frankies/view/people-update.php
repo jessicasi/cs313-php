@@ -30,8 +30,8 @@ if (isset($_SESSION['message1'])) {
         <div class="form-group  explain">
 
             <label for="people_email">*Email</label>
-            <input type="email" class="form-control" name="people_email" id="people_email" value='<?php if (isset($peopleEmail)) {
-                                                                                                        echo $peopleEmail;
+            <input type="email" class="form-control" name="people_email" id="people_email" value='<?php if (isset($people_email)) {
+                                                                                                        echo $people_email;
                                                                                                     } elseif (isset($_SESSION['peopleData']['people_email'])) {
                                                                                                         echo $_SESSION['peopleData']['people_email'];
                                                                                                     } ?>' placeholder="Email Address" required title="Required">
