@@ -10,6 +10,11 @@ html {
     box-sizing: inherit;
 }
 
+.animal-name{
+    color: #D99152;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
     width: 100%;
@@ -271,7 +276,6 @@ li .detailLink:hover {
 
 .animalName {
     color: #D99152;
-    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 6px;
 }
@@ -279,6 +283,10 @@ li .detailLink:hover {
 #detailDisplay {
     margin: auto;
     text-align: center;
+}
+
+#detailDisplay h3{
+    margin-top: 20px;
 }
 
 /**Forms**/
@@ -352,6 +360,7 @@ li .detailLink:hover {
     margin-top: 10px;
 }
 
+
 .classificationHeadings {
     margin-top: 10px;
 }
@@ -378,6 +387,7 @@ footer {
     h3 {
         font-size: 1.2rem;
         color: #99A66A;
+        text-align: center;
     }
     #animal-intro {
         font-size: 1.3rem;
@@ -417,5 +427,12 @@ footer {
         margin: 20px;
         width: 95%;
         font-size: 1.3rem;
+    }
+
+    .contact-animal-form{
+
+        border: 2px solid #024959;
+        margin: 15px;
+        padding: 10px;
     }
 }
