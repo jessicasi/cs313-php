@@ -95,7 +95,7 @@ if (isset($_SESSION['message'])) {
 <div class="form-group explain">
 <input type="hidden" name="action" value="addAnimal">
 <input type='submit' name="submit" value="Add Animal" class="button-update">
-<a href="/frankies/animals" class="button-update">Cancel</a>
+<a href="/frankies/animals" class="button-change">Cancel</a>
 </div>
 
 </form>

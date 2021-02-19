@@ -142,7 +142,7 @@ switch ($action) {
         // Check for missing data
         if (empty($animal_name) || empty($animal_age) || empty($animal_notes || empty( $animal_type))) {
             $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
-            $pageTitle = 'Add Vehicle';
+            $pageTitle = 'Add Animal';
             include '../view/animal-update.php';
             exit;
         }
@@ -183,8 +183,8 @@ switch ($action) {
             $message = 'Sorry, no animal information could be found.';
         }
 
-        if (isset($animal_info['animal_name'])) {
-            $pageTitle = "Modify $animal_info[animal_name])";
+        if (isset($animalInfo['animal_name'])) {
+            $pageTitle = "Modify $animalInfo[animal_name])";
         }
         include '../view/animal-delete.php';
         break;

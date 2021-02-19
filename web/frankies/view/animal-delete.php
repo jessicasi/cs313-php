@@ -33,7 +33,7 @@ if (isset($_SESSION['message'])) {
 <input type="hidden" name="action" value="deleteAnimal">
 <input type="hidden" name="animal_id" value="<?php if(isset($animalInfo['animal_id'])){ echo $animalInfo['animal_id'];}?>"> 
 <input type='submit' name='submit' value='Delete Animal' title="Delete Animal" class="button-update">
-<a href="/frankies/animals" class="button-update">Cancel</a>
+<a href="/frankies/animals" class="button-change">Cancel</a>
 </div>
 
 </form>
