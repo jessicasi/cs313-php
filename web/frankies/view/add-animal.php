@@ -6,8 +6,7 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
 <?php
 
 //Build Classification List
-$classificationList = '<select name="classification_id" required>';
-$classificationList .= '<option value="" disabled selected hidden>Classification</option>';
+$classificationList = '<select name="classification_id" class="form-control" required>';
 foreach ($classifications as $classification){
     $classificationList .= "<option value='$classification[classification_id]'";
     if(isset($classification_id)){
@@ -24,8 +23,7 @@ foreach ($classifications as $classification){
 $classificationList .= '</select>';
 
 //Build Type List
-$typeList = '<select name="type_id" required>';
-$typeList .= '<option value="" disabled selected hidden>Type</option>';
+$typeList = '<select name="type_id" class="form-control" required>';
 foreach ($types as $type){
     $typeList .= "<option value='$type[type_id]$type[type_name]'";
     if(isset($type_id)){
@@ -41,13 +39,14 @@ foreach ($types as $type){
 }
 $typeList .= '</select>';
 
-?><h1>Update Animal</h1>
+?><h1>Add Animal</h1>
 <?php
 if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
 }
 ?>
 
+<div class="add-animal-page">
 <p>* All Fields are Required</p>
 <form method="post" action="/frankies/animals/index.php" class="accountForms" enctype="multipart/form-data">
 <div class="form-group explain">
@@ -91,16 +90,17 @@ if (isset($_SESSION['message'])) {
 </div>
 <div class="form-group explain">
 <label>*Upload Image</label>
-<input type="file" name="file1">
+<input type="file" name="file1" class="form-control">
 </div>
 <div class="form-group explain">
 <input type="hidden" name="action" value="addAnimal">
-<input type='submit' name="submit" value="Add Animal">
+<input type='submit' name="submit" value="Add Animal" class="button-update">
+<a href="/frankies/animals" class="button-update">Cancel</a>
 </div>
 
 </form>
 
-
+</div>
 
 <?php unset($_SESSION['message']);?>
 <?php include '../common/footer.php' ?>

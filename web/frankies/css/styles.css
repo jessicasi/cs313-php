@@ -195,9 +195,29 @@ select {
 .button-update {
     background-color: #024959;
     color: white;
+    margin-top: 15px;
+    
 }
 
+a.man-button{
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
 
+.animal-man-page h2:last-of-type{
+    margin-top: 20px;
+
+}
+.animal-man-page h2:first-of-type{
+    margin-bottom: 20px;
+
+}
+
+.animal-man-page h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #99A66A;
+}
 a.button-update {
     text-decoration: none;
     padding: 1px 6px;
@@ -209,6 +229,7 @@ a.button-update {
     border-style: outset;
     border-color:rgb(118, 118, 118);
     border-image: initial;
+
 }
 
 a.button-update:hover{
@@ -223,6 +244,20 @@ a.button-update:hover{
 
 #animal-display {
     list-style: none;
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+td a {
+    color: #D99152;
+    text-decoration: none;
+}
+
+td a:hover{
+    font-size: 1.2rem;
+    color: #D99152;
 }
 
 .detailLink {
@@ -269,6 +304,22 @@ li .detailLink:hover {
     margin: auto;
     padding: 10px;
     text-align: center;
+}
+
+.delete-animal-page, .add-animal-page{
+    width: 95%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px #D99152 solid;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.delete-animal-page p, .add-animal-page p{
+    color: #99A66A;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .admin-page h2, .account-page h2 {

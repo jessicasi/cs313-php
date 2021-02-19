@@ -6,8 +6,7 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
 <?php
 
 //Build Classification List
-$classificationList = '<select name="classification_id" required>';
-$classificationList .= '<option value="" disabled selected hidden>Classification</option>';
+$classificationList = '<select name="classification_id" class="form-select" required>';
 foreach ($classifications as $classification){
     $classificationList .= "<option value='$classification[classification_id]'";
     if(isset($classification_id)){
@@ -24,8 +23,7 @@ foreach ($classifications as $classification){
 $classificationList .= '</select>';
 
 //Build Type List
-$typeList = '<select name="type_id" required>';
-$typeList .= '<option value="" disabled selected hidden>Type</option>';
+$typeList = '<select name="type_id" class="form-select" required>';
 foreach ($types as $type){
     $typeList .= "<option value='$type[type_id]'";
     if(isset($type_id)){

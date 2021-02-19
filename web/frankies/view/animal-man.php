@@ -10,18 +10,23 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
 }
 ?><h1 class="animal-man-heading">Animal Administrative</h1>
 <div class="animal-man-page">
-    <ul class="animal-man-list">
-        <li> <a href='/frankies/animals/index.php?action=deliverAnimalTypeView' class="animal-man-link">Add Animal Type </a></li>
-        <li> <a href='/frankies/animals/index.php?action=deliverAnimalView' class="animal-man-link">Add Animal </a></li>
-    </ul>
+<h2>Add Animals/Types</h2>
+    <!-- <ul class="animal-man-list"> -->
+        <!-- <li>  -->
+        <a href='/frankies/animals/index.php?action=deliverAnimalTypeView' class=" button-update man-button">Add Animal Type </a>
+        <!-- </li> -->
+        <!-- <li>  -->
+        <a href='/frankies/animals/index.php?action=deliverAnimalView' class=" button-update man-button">Add Animal </a>
+        <!-- </li> -->
+    <!-- </ul> -->
 
     <?php
     if (isset($_SESSION['message'])) {
         echo $_SESSION['message'];
     }
     if (isset($typeList)) {
-        echo '<h2 class="ctr">Animals By Type</h2>';
-        echo '<p class="ctr">Choose a type to see those animals</p>';
+        echo '<h2>Update Existing Animals</h2>';
+        echo '<p>Choose a type to see those animals</p>';
         echo $typeList;
     }
     ?>
@@ -32,7 +37,7 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
     <table id="animalDisplay" class="animalTable"></table>
 
     <script src="../scripts/scripts.js"></script>
-
+    <a href="/frankies/accounts?action=deliverAdminView" class="button-update">Cancel</a>
 </div>
 
 <?php include '../common/footer.php' ?>
