@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
 <input type="hidden" name="action" value="updateReview">
 <input type="hidden" name="review_id" value='<?php echo $review_id;?>'>
 <input type="submit" name="submit" value="Update Review" title="Modify Review" class="button-update">
-<a href="/frankies/accounts?action=deliverAdminView" class="button-update">Cancel</a>
+<a href="/frankies/accounts?action=deliverAdminView" class="button-change">Cancel</a>
 </div>
 </form>
 

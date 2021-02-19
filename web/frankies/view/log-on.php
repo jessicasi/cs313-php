@@ -26,11 +26,11 @@ if (isset($_SESSION['message'])) {
 
     <div class="form-group explain">
             <input type="hidden" name="action" value="Login">
-            <input type="submit" name="submit" value="Login">
+            <input type="submit" name="submit" value="Login" class="button-update">
         </div>
 
     <div class="form-group explain register-new">
-            <a href='/frankies/accounts/index.php?action=deliverRegisterView' title="Register New Account">I need to register a new account</a>
+            <a href='/frankies/accounts/index.php?action=deliverRegisterView' title="Register New Account" class="button-change">I need to register a new account</a>
     </div>
 </form>
 

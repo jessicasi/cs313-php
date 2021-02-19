@@ -167,7 +167,7 @@ switch ($action) {
 
         // Check and report the result
         if ($updateOutcome === 1) {
-            $_SESSION['message'] = "<p>Congratulations your Animal was updated successfully in the database .</p>";
+            $_SESSION['message'] = "<p class='returnMessage'>Congratulations your Animal was updated successfully in the database .</p>";
             header('location: /frankies/animals/');
             exit;
         } else {

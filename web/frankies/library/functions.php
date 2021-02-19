@@ -156,7 +156,7 @@ function uploadFile($name){
       // Moves the file to the target folder
       move_uploaded_file($source, $target);
       // Send file for further processing
-      processImage($image_dir_path, $filename);
+      //Image($image_dir_path, $filename);
       // Sets the path for the image for Database storage
       $filepath = $image_dir . '/' . $filename;
       // Returns the path where the file is stored
@@ -167,7 +167,7 @@ function uploadFile($name){
 
    // Processes images by getting paths and 
 // creating smaller versions of the image
-function processImage($dir, $filename)
+/* function processImage($dir, $filename)
 {
    // Set up the variables
    $dir = $dir . '/';
@@ -175,5 +175,5 @@ function processImage($dir, $filename)
    // Set up the image path
    $image_path = $dir . $filename;
 
-}
+} */
   

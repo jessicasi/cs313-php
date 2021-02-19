@@ -31,7 +31,7 @@
         <h2>Customer Reviews</h2>
         <?php
         if (!isset($_SESSION['loggedin'])) {
-            echo '<p> If you\'d like to add a review, please <a href="/frankies/accounts/index.php?action=deliverLoginView" title="Login">log in here</a></p>';
+            echo '<p> If you\'d like to add a review, please <a href="/frankies/accounts/index.php?action=deliverLoginView" title="Login" class="button-update">log in here</a></p>';
         } else {
             if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];

@@ -37,7 +37,7 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
     <table id="animalDisplay" class="animalTable"></table>
 
     <script src="../scripts/scripts.js"></script>
-    <a href="/frankies/accounts?action=deliverAdminView" class="button-update">Cancel</a>
+    <a href="/frankies/accounts?action=deliverAdminView" class="button-change right-side">Cancel</a>
 </div>
 
 <?php include '../common/footer.php' ?>

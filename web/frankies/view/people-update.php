@@ -42,7 +42,8 @@ if (isset($_SESSION['message1'])) {
                                                                                 echo $_SESSION['clientData']['people_id'];
                                                                             } ?>'>
         <input type="hidden" name="action" value="updatePerson">
-        <input type='submit' name='submit' value='Update Account Information' title="Update Account Information">
+        <input type='submit' name='submit' value='Update Account Information' title="Update Account Information" class="button-update">
+        <a href="/frankies/accounts?action=deliverAdminView" class="button-change">Cancel</a>
     </form>
 
     <?php
@@ -67,7 +68,8 @@ if (isset($_SESSION['message1'])) {
                                                                 echo $_SESSION['clientData']['people_id'];
                                                             } ?>'>
             <input type="hidden" name="action" value="updatePassword">
-            <input type="submit" name="submit" value="Update Password">
+            <input type="submit" name="submit" value="Update Password" class="button-update">
+            <a href="/frankies/accounts?action=deliverAdminView" class="button-change">Cancel</a>
 
         </div>
     </form>

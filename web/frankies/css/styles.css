@@ -209,6 +209,12 @@ select {
     
 }
 
+.button-change{
+    background-color: #99A66A;
+    color:#024959;
+
+}
+
 a.man-button{
     margin-top: 25px;
     margin-bottom: 15px;
@@ -230,7 +236,7 @@ a.man-button{
     font-size: 1.4rem;
     color: #99A66A;
 }
-a.button-update {
+a.button-update, a.button-change {
     text-decoration: none;
     padding: 1px 6px;
     border-width: 2px;
@@ -241,10 +247,11 @@ a.button-update {
     border-style: outset;
     border-color:rgb(118, 118, 118);
     border-image: initial;
+    margin-top: 15px;
 
 }
 
-a.button-update:hover{
+a.button-update:hover, a.button-change:hover{
     color: white;
 }
 
@@ -262,9 +269,17 @@ table {
     margin-bottom: 20px;
 }
 
+td{
+    font-size: 1.1rem;
+}
+
 td a {
     color: #D99152;
     text-decoration: none;
+}
+
+.right-side{
+    float:right;
 }
 
 td a:hover{
@@ -368,7 +383,10 @@ li .detailLink:hover {
     margin-top: 10px;
 }
 
-
+.returnMessage{
+    text-align: center;
+    color: #99A66A;
+}
 .classificationHeadings {
     margin-top: 10px;
 }
