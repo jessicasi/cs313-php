@@ -5,8 +5,7 @@ if ($_SESSION['clientData']['people_level'] != 1 || !$_SESSION['loggedin']) {
 }?><h1>Add Animal Type</h1>
 <?php
 //Build Classification List
-$classificationList = '<select name="classification_id" required>';
-$classificationList .= '<option value="" disabled selected hidden>Classification</option>';
+$classificationList = '<select name="classification_id" class="form-select" required>';
 foreach ($classifications as $classification){
     $classificationList .= "<option value='$classification[classification_id]'";
     if(isset($classification_id)){
@@ -43,7 +42,8 @@ if (isset($_SESSION['message'])) {
 </div>
 <div class="form-group explain">
 <input type="hidden" name="action" value="addType">
-<input type='submit' name='submit' value='Add Type' title="Add Type">
+<input type='submit' name='submit' value='Add Type' title="Add Type" class="button-update">
+<a href="/frankies/animals" class="button-change">Cancel</a>
 </div>
 
 <?php unset($_SESSION['message']);?>

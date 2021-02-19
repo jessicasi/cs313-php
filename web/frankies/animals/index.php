@@ -184,7 +184,7 @@ switch ($action) {
         }
 
         if (isset($animalInfo['animal_name'])) {
-            $pageTitle = "Modify $animalInfo[animal_name])";
+            $pageTitle = "Delete $animalInfo[animal_name]";
         }
         include '../view/animal-delete.php';
         break;
@@ -235,7 +235,7 @@ switch ($action) {
         // Check for missing data
         if (empty($animal_name) || empty($animal_age) || empty($animal_notes)) {
             $_SESSION['message'] = '<p >Please provide information for all form fields.</p>';
-            $pageTitle = 'Add Vehicle';
+            $pageTitle = 'Add Animal';
             include '../view/animal-update.php';
             exit;
         }
