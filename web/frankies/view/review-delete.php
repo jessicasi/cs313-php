@@ -20,7 +20,8 @@ if (isset($_SESSION['message'])) {
 <div class="form-group explain">
 <input type="hidden" name="action" value="deleteReview">
 <input type="hidden" name="review_id" value='<?php echo $review_id;?>'>
-<input type="submit" name="submit" value="Delete Review" title="Delete Review">
+<input type="submit" name="submit" value="Delete Review" title="Delete Review" class="button-update">
+<a href="/frankies/accounts?action=deliverAdminView" class="button-update">Cancel</a>
 </div>
 </form>
 </div>
