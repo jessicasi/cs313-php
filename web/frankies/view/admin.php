@@ -46,6 +46,7 @@ if ($_SESSION['clientData']['people_level'] == 1) {
 </div>
 <?php
 unset($_SESSION['message']);
+unset($_SESSION['message1']);
 ?>
 
 <?php include '../common/footer.php' ?>
