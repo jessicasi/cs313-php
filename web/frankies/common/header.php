@@ -23,7 +23,7 @@
         <a href='/frankies' title="Frankie's Farm Home Page"><img src="/frankies/images/site/frankieLogo.png" alt="Frankie's Farm Logo" id="bannerimg"></a>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="/frankies/images/site/pig.png" alt="Frankie the Pig" id="nav-image"></a>
+                <a class="navbar-brand" href="/frankies"><img src="/frankies/images/site/pig.png" alt="Frankie the Pig" id="nav-image"></a>
                 <?php
 
                 if (isset($_SESSION['clientData']['people_fname']) && isset($_SESSION['loggedin'])) {

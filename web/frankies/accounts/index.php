@@ -232,12 +232,12 @@ switch ($action) {
         
                 echo $updateOutcome;
                 if ($updateOutcome === 1) {
-                    $_SESSION['message'] = "<p class='returnMessage'>Congratulations your password was updated successfully in the database .</p>";
+                    $_SESSION['message'] = "<p>Congratulations your password was updated successfully in the database .</p>";
                     include '../view/admin.php';
                     unset($_SESSION['message']);
                     exit;
                 } else {
-                    $_SESSION['message2'] = '<p class="errorMessage">Sorry, but the password update failed. Please try again.</p>';
+                    $_SESSION['message2'] = '<p>Sorry, but the password update failed. Please try again.</p>';
                     include '../view/people-update.php';
                     unset($_SESSION['message2']);
                     exit;

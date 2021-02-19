@@ -39,6 +39,11 @@ h1 {
     text-align: center;
 }
 
+.errorMessage{
+    text-align: center;
+    color: #D99152;
+}
+
 .icon-pic {
     width: 20%;
 }
@@ -301,6 +306,7 @@ li .detailLink:hover {
     margin-top: 0;
 }
 
+
 #welcome:hover {
     color: #99A66A;
 }
@@ -417,6 +423,7 @@ footer {
         width: 40%;
         margin-left: 55px;
         font-size: 1.2rem;
+        text-align: center;
     }
     a.accountLink:hover {
         font-size: 1.5rem;
