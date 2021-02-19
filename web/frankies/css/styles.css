@@ -282,6 +282,10 @@ td a {
     float:right;
 }
 
+a.right-side{
+    margin-top: 25px;
+}
+
 td a:hover{
     font-size: 1.2rem;
     color: #D99152;
