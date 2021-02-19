@@ -262,7 +262,7 @@ li .detailLink:hover {
     color: #99A66A;
 }
 
-.admin-page {
+.admin-page, .update-animal-page {
     width: 95%;
     margin-top: 15px;
     border: 1px #024959 solid;

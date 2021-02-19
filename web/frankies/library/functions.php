@@ -131,7 +131,7 @@ function buildTypeList($types)
 }
 
 function buildClassSelect($classifications){
-   $classificationList = '<select id="typeList">';
+   $classificationList = '<select id="typeList" class="form-select" >';
    $classificationList .= "<option>Choose a Classification</option>";
    foreach ($classifications as $classification) {
       $classificationList .= "<option value='$classification[classification_id]'>$classification[classification_type]</option>";

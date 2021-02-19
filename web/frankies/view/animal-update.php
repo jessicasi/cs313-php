@@ -48,6 +48,8 @@ if (isset($_SESSION['message'])) {
 }
 ?>
 
+<div class="update-animal-page">
+
 <p>* All Fields are Required</p>
 <form method="post" action="/frankies/animals/index.php" class="accountForms">
 <div class="form-group explain">
@@ -92,10 +94,12 @@ if (isset($_SESSION['message'])) {
 <div class="form-group explain">
 <input type="hidden" name="action" value="updateAnimal">
 <input type="hidden" name="animal_id" value = '<?php if (isset($animalInfo['animal_id'])) { echo $animalInfo['animal_id'];}?>'>
-<input type='submit' name="submit" value="Update Animal">
+<input type='submit' name="submit" value="Update Animal" class="button-update">
+<a href="/frankies/animals" class="button-update">Cancel</a>
 </div>
 
 </form>
+</div>
 
 <?php unset($_SESSION['message']);?>
 <?php include '../common/footer.php' ?>
